@@ -1,0 +1,85 @@
+body {
+  background-color: #DCDCDC;
+}
+
+.app-wrapper { 
+  display: grid;
+ 
+  grid-template-areas:
+  "h h h"
+  "n c c";
+  grid-template-rows: 100px 1fr;
+  grid-template-columns: 3fr 9fr;
+
+}
+
+.header {
+  grid-area: h;
+
+  background-color: #222;
+
+  display: flex;
+  justify-content: center;
+}
+
+.header img {
+  width: 150px;
+}
+
+
+.nav {
+  border-radius: 10px;
+
+  margin: 30px;
+
+  grid-area: n;
+
+  display: flex;
+  flex-direction: column;
+
+
+  background-color: #222;
+  color: #777;
+
+  overflow: hidden;
+}
+
+.nav a {
+  padding: 10px;
+  font-size: 2rem;
+  cursor: pointer;
+
+  transition: background-color .3s linear, color .3s linear;
+}
+
+.nav a:hover {
+  background-color: #acacac;
+  color: #000;
+}
+
+.content {
+  grid-area: c;
+
+  margin: 30px;
+  overflow: hidden;
+}
+
+.content-inner {
+  display: flex;
+  /* justify-content: space-between; */
+}
+
+.content .wallpaper {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.content .ava {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin: 20px;
+
+  background: url("https://gdb.rferl.org/EE4971D6-4473-4D70-91C9-3973F1FC439B_cx21_cy2_cw59_w408_r1_s.jpg") center no-repeat;
+  background-size: 400px;
+}
