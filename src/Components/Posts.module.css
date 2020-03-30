@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway&display=swap");
+
+.post {
+  grid-area: post;
+}
+
+.post textarea {
+  margin: 20px;
+  font-size: 1.5rem;
+  width: 500px;
+  padding: 5px 10px;
+  outline: 0;
+  font-family: 'Raleway', sans-serif;
+  cursor: pointer;
+  border-width: 0;
+  resize: none;
+}
+
+.btn {
+  margin-left: 20px;
+  text-decoration: none;
+  outline: none;
+  display: inline-block;
+  padding: 25px 0;
+  border: 2px solid #222;
+  width: 500px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  position: relative;
+  overflow: hidden;
+}
+
+span {
+  font-family: 'Montserrat Alternates', sans-serif;
+  color: #222;
+  font-weight: 700;
+  font-size: 1rem;
+  position: relative;
+  z-index: 5;
+}
+
+/* Comment */
+
+.comments {
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.review {
+  color: #222222;
+  font-size: 1.5rem;
+  font-weight: 500;
+
+  width: 500px;
+
+  display: flex;
+
+  margin-bottom: 20px;
+}
+
+.review img {
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+}
+
+.imgOne {
+  background: #777 url("https://funpick.ru/wp-content/uploads/2018/02/Ava-pats-12.jpg") center no-repeat;
+  width: 80px;
+  height: 80px;
+  background-size: contain;
+  border-radius: 50%;
+}
+
+.imgTwo {
+  background: #777 url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSXm6IXT2Nma4FBh8zxZhwWwwzGTbHYr6EMCQs7UQeAAxJEoFoU") center no-repeat;
+  width: 80px;
+  height: 80px;
+  background-size: cover;
+  border-radius: 50%;
+}
+
+.text {
+  margin-left: 20px;
+  width: 400px;
+}
+
+.text h1 {
+  font-size: 0.8rem;
+}
+
+.text p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.text time {
+  font-size: 1rem;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn:before, 
+.btn:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+.btn:before{
+  transform: translateX(-100%);
+  background: #fff;
+  transition: transform .3s cubic-bezier(.55,.055,.675,.19);
+}
+
+.btn:after {
+  background: #000;
+  transform: translateX(100%);
+  transition: transform .3s cubic-bezier(.16,.73,.58,.62) .3s;
+}
+
+.btn:hover:before,
+.btn:hover:after {transform: translateX(0);}
+

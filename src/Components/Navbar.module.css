@@ -1,0 +1,28 @@
+.nav {
+  padding: 30px;
+  margin: 30px;
+  margin-left: 0;
+
+  grid-area: nav;
+
+  display: flex;
+  flex-direction: column;
+
+  background-color: #222;
+  color: #777;
+
+  text-transform: lowercase;
+}
+
+.nav a {
+  padding: 5px;
+  font-size: 2rem;
+  cursor: pointer;
+  font-weight: 300;
+  transition: color .2s linear;
+}
+  
+.nav a:hover {
+  color: #fff;
+}
+  
