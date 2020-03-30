@@ -1,5 +1,6 @@
 import React from 'react';
 import profile from './Profile.module.css';
+import Posts from "./Posts/Posts";
 
 const Profile = () => {
     return <div className={profile.info}>
@@ -14,9 +15,9 @@ const Profile = () => {
             <p>Phone: +7(901)112-37-46</p>
             <p>Web Site: https://beactive.ru</p>
           </div>
-          
         </div>
-      </div> 
+        <Posts/>
+    </div>
 
 }
 

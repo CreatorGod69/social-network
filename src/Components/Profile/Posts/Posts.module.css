@@ -65,7 +65,7 @@ span {
   height: 80px;
 }
 
-.imgOne {
+.img {
   background: #777 url("https://funpick.ru/wp-content/uploads/2018/02/Ava-pats-12.jpg") center no-repeat;
   width: 80px;
   height: 80px;
@@ -73,12 +73,14 @@ span {
   border-radius: 50%;
 }
 
-.imgTwo {
-  background: #777 url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSXm6IXT2Nma4FBh8zxZhwWwwzGTbHYr6EMCQs7UQeAAxJEoFoU") center no-repeat;
-  width: 80px;
-  height: 80px;
+.img.img1 {
+  background: #777 url("https://funpick.ru/wp-content/uploads/2018/02/Ava-pats-12.jpg") center no-repeat;
   background-size: cover;
-  border-radius: 50%;
+}
+
+.img.img2 {
+  background: #777 url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSXm6IXT2Nma4FBh8zxZhwWwwzGTbHYr6EMCQs7UQeAAxJEoFoU") center no-repeat;
+  background-size: cover;
 }
 
 .text {
@@ -116,12 +118,12 @@ footer {
 
 .btn:before{
   transform: translateX(-100%);
-  background: #fff;
+  background: #222;
   transition: transform .3s cubic-bezier(.55,.055,.675,.19);
 }
 
 .btn:after {
-  background: #000;
+  background: #777;
   transform: translateX(100%);
   transition: transform .3s cubic-bezier(.16,.73,.58,.62) .3s;
 }

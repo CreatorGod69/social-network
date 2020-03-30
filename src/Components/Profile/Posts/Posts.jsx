@@ -13,7 +13,7 @@ const Posts = () => {
             </div>
             <div className={post.comments}>
                 <div className={post.review}>
-                    <div className={post.imgOne}></div>
+                    <div className={`${post.img} ${post.img1}`}></div>
                     <div className={post.text}>
                         <h1>John Doe</h1>
                         <p>Lorem ipsum dolor sit amet.</p>
@@ -25,7 +25,7 @@ const Posts = () => {
                 </div>
 
                 <div className={post.review}>
-                    <div className={post.imgTwo}></div>
+                    <div className={`${post.img} ${post.img2}`}></div>
                     <div className={post.text}>
                         <h1>John Doe</h1>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui soluta porro laboriosam libero ab repudiandae, nisi repellendus dolor placeat? Tempora similique provident iusto ducimus aut laboriosam error veniam incidunt expedita nostrum, et corporis aliquid eveniet aspernatur facere possimus beatae perspiciatis, vitae ut dolores. Id, eius.</p>
@@ -35,6 +35,7 @@ const Posts = () => {
                         </footer>
                     </div>
                 </div>
+
             </div>
         </div>
 }

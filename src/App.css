@@ -67,7 +67,7 @@ margin: 0 0 5px;
  
   grid-template-areas:
   "nav info info"
-  "nav post post";
+  "nav info info";
   grid-template-rows: 3fr 9fr;
   grid-template-columns: 4fr 8fr;
 
