@@ -7,10 +7,10 @@ import Posts from './Components/Profile/Posts/Posts';
 
 const App = () => {
   return (
-    <div className="header-wrapper">
+    <div className="app-wrapper">
       <Header />
 
-      <div className='app-wrapper'>
+      <div className='app-inner'>
         <Navbar />
         <Profile />
       </div>

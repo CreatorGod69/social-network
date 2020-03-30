@@ -62,13 +62,12 @@ p {
 margin: 0 0 5px;
 }
 
-.app-wrapper { 
+.app-inner {
   display: grid;
  
   grid-template-areas:
   "nav info info"
   "nav info info";
-  grid-template-rows: 3fr 9fr;
   grid-template-columns: 4fr 8fr;
 
   width: 100%;
