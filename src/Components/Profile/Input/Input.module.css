@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway&display=swap");
+
+.post textarea {
+  margin: 20px;
+  font-size: 1.5rem;
+  width: 500px;
+  padding: 5px 10px;
+  outline: 0;
+  font-family: 'Raleway', sans-serif;
+  cursor: pointer;
+  border-width: 0;
+  resize: none;
+}
+
+.btn {
+  margin-left: 20px;
+  text-decoration: none;
+  outline: none;
+  display: inline-block;
+  padding: 25px 0;
+  border: none;
+  background: #222;
+
+  width: 500px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  position: relative;
+  overflow: hidden;
+}
+
+span {
+  font-family: 'Montserrat Alternates', sans-serif;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+  position: relative;
+  z-index: 5;
+
+  transition: color .2s linear;
+}
+
+.btn:before, 
+.btn:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+.btn:before{
+  transform: translateX(-100%);
+  background: #888;
+  transition: transform .3s cubic-bezier(.55,.055,.675,.19);
+}
+
+.btn:after {
+  background: #444;
+  transform: translateX(100%);
+  transition: transform .3s cubic-bezier(.16,.73,.58,.62) .3s;
+}
+
+.btn:hover:before,
+.btn:hover:after {transform: translateX(0);}
+

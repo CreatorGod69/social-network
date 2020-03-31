@@ -3,7 +3,7 @@ import './App.css';
 import Header from './Components/Header/Header';
 import Navbar from './Components/Navbar/Navbar';
 import Profile from './Components/Profile/Profile';
-import Posts from './Components/Profile/Posts/Posts';
+import Input from './Components/Profile/Input/Input';
 
 const App = () => {
   return (

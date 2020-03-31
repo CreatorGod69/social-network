@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway&display=swap");
+
+/* Comment */
+
+.comments {
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.review {
+  color: #222222;
+  font-size: 1.5rem;
+  font-weight: 500;
+
+  width: 500px;
+
+  display: flex;
+
+  margin-bottom: 20px;
+}
+
+.review img {
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+}
+
+.img {
+  background: #777 url("https://image.winudf.com/v2/image1/Y29tLmNhbmR5LnNvd2FyX0dpcmx5X3NjcmVlbl83XzE1NTE2NDI5OTlfMDA2/screen-7.jpg?fakeurl=1&type=.jpg") center no-repeat;
+  width: 80px;
+  height: 80px;
+  background-size: cover;
+  border-radius: 50%;
+}
+
+.text {
+  margin-left: 20px;
+  width: 400px;
+}
+
+.text h1 {
+  font-size: 0.8rem;
+}
+
+.text p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.text time {
+  font-size: 1rem;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+}

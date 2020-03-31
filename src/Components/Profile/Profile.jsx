@@ -1,6 +1,8 @@
 import React from 'react';
 import profile from './Profile.module.css';
-import Posts from "./Posts/Posts";
+import Input from "./Input/Input";
+import Post from './Post/Post'
+
 
 const Profile = () => {
     return <div className={profile.info}>
@@ -16,7 +18,9 @@ const Profile = () => {
             <p>Web Site: https://beactive.ru</p>
           </div>
         </div>
-        <Posts/>
+        <Input/>
+        <Post message="Hi! How are you?"/>
+        <Post message="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae, molestias?"/>
     </div>
 
 }
