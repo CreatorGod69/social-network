@@ -2,7 +2,7 @@
   height: 500px;
 
   padding: 30px;
-  margin: 30px;
+  margin: 20px;
   margin-left: 0;
 
   grid-area: nav;
@@ -17,14 +17,21 @@
 }
 
 .nav a {
+  color: #777;
   padding: 5px;
   font-size: 2rem;
   cursor: pointer;
   font-weight: 300;
   transition: color .2s linear;
+
+  text-decoration: none;
 }
   
 .nav a:hover {
   color: #fff;
 }
-  
+
+.nav a.active {
+  color: #fff;
+  text-decoration: underline;
+}

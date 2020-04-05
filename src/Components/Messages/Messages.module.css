@@ -1,0 +1,10 @@
+.messages {
+    margin: 20px;
+
+   display: grid;
+    grid-template-columns: 2fr 10fr;
+}
+
+a {
+    text-decoration: none;
+}

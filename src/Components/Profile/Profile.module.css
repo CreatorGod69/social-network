@@ -1,7 +1,8 @@
 .info {
   grid-area: info;
-  margin: 10px 0;
   overflow: hidden;
+
+  margin: 20px;
 }
   
 .info__inner {
@@ -22,6 +23,6 @@
 .info img {
   width: 150px;
   height: 150px;
-  margin: 20px;
   background-size: 400px;
+  margin-right: 20px;
 }

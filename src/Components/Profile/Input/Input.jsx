@@ -8,7 +8,7 @@ const Input = () => {
                     <div>
                         <textarea rows="3" placeholder="Write a message" required></textarea>
                     </div>
-                    <button className={input.btn} href=""><span>POST</span></button>
+                    <button className={input.btn} href="">POST</button>
                 </form>
             </div>
         </div>
