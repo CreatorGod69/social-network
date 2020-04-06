@@ -1,6 +1,5 @@
 import React from 'react';
 import dialog from './DialogBlock.module.css';
-import input from "../../Profile/Input/Input.module.css";
 
 const DialogBlock = () => {
     return <div className={dialog.dialog_block}>
