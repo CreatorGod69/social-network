@@ -1,8 +1,15 @@
 import React from 'react';
 import profile from './Profile.module.css';
-import Input from "./Input/Input";
+import Input from "./ProfileInput/Input";
 import Post from './Post/Post'
 
+let PostsData = [
+  {name: "Alex", message: "Hi! How are you?"},
+  {name: "Vika", message: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae, molestias?"},
+]
+
+let PostsElements = PostsData
+  .map ( post => <Post name = {post.name} message={ post.message }/> );
 
 const Profile = () => {
     return <div className={profile.info}>
@@ -19,8 +26,7 @@ const Profile = () => {
           </div>
         </div>
         <Input/>
-        <Post message="Hi! How are you?"/>
-        <Post message="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae, molestias?"/>
+        { PostsElements }
     </div>
 
 }

@@ -1,4 +1,4 @@
-.dialog_block {
+.dialog {
     background-color: #fff;
     height: 500px;
 
@@ -12,11 +12,15 @@
     bottom: 0;
 
     border: 2px solid #fff;
+
 }
 
 .content {
     display: flex;
     flex-direction: column;
+
+    height: 330px;
+    overflow: auto;
 }
 
 .text {
@@ -37,8 +41,8 @@
 }
 
 .textarea {
-    width: 100%;
-}
+     width: 100%;
+ }
 
 .btn {
     width: 100%;

@@ -7,7 +7,7 @@ const Post = (props) => {
                 <div className={post.review}>
                     <div className={post.img}></div>
                     <div className={post.text}>
-                        <h1>John Doe</h1>
+                        <h1>{props.name}</h1>
                         <p>{props.message}</p>
                         <footer>
                             <div className="like"></div>
