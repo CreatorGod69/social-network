@@ -1,8 +1,14 @@
 .textarea {
     width: 100%;
+
+
 }
 
 .btn {
     width: 100%;
 }
 
+form {
+    border: 2px solid #fff;
+    border-right: none;
+}

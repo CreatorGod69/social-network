@@ -1,7 +1,7 @@
 .messages {
     margin: 20px;
 
-   display: grid;
+    display: grid;
     grid-template-columns: 2fr 10fr;
 }
 
