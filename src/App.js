@@ -6,6 +6,7 @@ import Messages from './Components/Messages/Messages';
 import Profile from './Components/Profile/Profile';
 import {BrowserRouter, Route} from "react-router-dom"
 
+
 const App = (props) => {
   return (
     <BrowserRouter>
@@ -15,7 +16,7 @@ const App = (props) => {
             <div className="app-inner">
                 <Navbar />
                 <div className="app-content">
-                    <Route path="/messages" render={ () => <Messages DialogsData={props.DialogsData} /> }/>
+                    <Route path="/messages" render={ () => <Messages DialogsData={props.DialogsData} MessagesData={props.MessagesData} /> }/>
                     <Route path="/profile" render={ () => <Profile PostsData={props.PostsData} /> }/>
                 </div>
             </div>
