@@ -17,7 +17,7 @@ const App = (props) => {
                 <Navbar />
                 <div className="app-content">
                     <Route path="/messages" render={ () => <Messages DialogsData={props.DialogsData} MessagesData={props.MessagesData} /> }/>
-                    <Route path="/profile" render={ () => <Profile PostsData={props.PostsData} /> }/>
+                    <Route path="/profile" render={ () => <Profile PostsData={props.PostsData}/> }/>
                 </div>
             </div>
 

@@ -12,7 +12,7 @@ const Messages = (props) => {
             { DialogElements }
         </div>
         <div className={messages.dialog}>
-            <Dialog/>
+            <Dialog MessagesData={props.MessagesData}/>
         </div>
     </div>
 }
