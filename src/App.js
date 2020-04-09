@@ -16,8 +16,12 @@ const App = (props) => {
             <div className="app-inner">
                 <Navbar />
                 <div className="app-content">
-                    <Route path="/messages" render={ () => <Messages DialogsData={props.DialogsData} MessagesData={props.MessagesData} /> }/>
-                    <Route path="/profile" render={ () => <Profile PostsData={props.PostsData}/> }/>
+                    <Route path="/messages" 
+                      render={ () => <Messages 
+                        state={props.state.messages} /> }/>
+                    <Route path="/profile" 
+                      render={ () => <Profile 
+                        state={props.state.profile}/> }/>
                 </div>
             </div>
 

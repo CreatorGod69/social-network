@@ -4,7 +4,7 @@ import Input from "./ProfileInput/Input";
 import Post from './Post/Post'
 
 const Profile = (props) => {
-  let PostsElements = props.PostsData
+  let PostsElements = props.state.PostsData
     .map ( post => <Post name = {post.name} message={ post.message }/> );
 
     return <div className={profile.info}>

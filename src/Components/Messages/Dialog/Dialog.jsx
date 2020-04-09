@@ -3,7 +3,7 @@ import dialog from './Dialog.module.css';
 import DialogInput from "../DialogInput/DialogInput";
 
 const Dialog = (props) => {
-    let MessagesElements = props.MessagesData
+    let MessagesElements = props.state.MessagesData
     .map( message => <div><p className={`${dialog.me} + ${dialog.text}`}>{message.message}</p></div>);
 
     return <div className={dialog.dialog}>
