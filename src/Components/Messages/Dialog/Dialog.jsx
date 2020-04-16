@@ -3,15 +3,14 @@ import dialog from './Dialog.module.css';
 import DialogInput from "../DialogInput/DialogInput";
 
 const Dialog = (props) => {
-    let MessagesElements = props.state.MessagesData
-    .map( message => <div><p className={`${dialog.me} + ${dialog.text}`}>{message.message}</p></div>);
+    let MessagesElements = props.state.map( message => <div><p className={`${dialog.other} + ${dialog.text}`}>{message.message}</p></div>);
 
     return <div className={dialog.dialog}>
         <div className={dialog.inner}>
             <div className={dialog.content}>
                 { MessagesElements }
             </div>
-            <DialogInput />
+            <DialogInput addMessage={props.addMessage}/>
         </div>
     </div>
 }

@@ -19,16 +19,9 @@
 }
 
 .review img {
-  border-radius: 50%;
+  object-fit: cover;
   width: 80px;
   height: 80px;
-}
-
-.img {
-  background: #777 url("https://image.winudf.com/v2/image1/Y29tLmNhbmR5LnNvd2FyX0dpcmx5X3NjcmVlbl83XzE1NTE2NDI5OTlfMDA2/screen-7.jpg?fakeurl=1&type=.jpg") center no-repeat;
-  width: 80px;
-  height: 80px;
-  background-size: cover;
   border-radius: 50%;
 }
 

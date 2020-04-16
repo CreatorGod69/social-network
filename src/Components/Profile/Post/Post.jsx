@@ -5,13 +5,13 @@ const Post = (props) => {
     return <div className={post.post}>
             <div className={post.comments}>
                 <div className={post.review}>
-                    <div className={post.img}></div>
+                    <img src={props.img} alt=""></img>
                     <div className={post.text}>
                         <h1>{props.name}</h1>
                         <p>{props.message}</p>
                         <footer>
                             <div className="like"></div>
-                            <time>22.02.2020</time>
+                            <time>{props.data}</time>
                         </footer>
                     </div>
                 </div>

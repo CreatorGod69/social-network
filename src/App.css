@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Montserrat+Alternates:100,200,300,400,500,600,700,800,900&display=swap&subset=cyrillic");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900&display=swap&subset=cyrillic");
 
 /* Полоса прокрутки */
 ::-webkit-scrollbar {
@@ -22,7 +22,7 @@ body {
   color: #222;
   background: #DCDCDC;
   -webkit-font-smoothing: antialiased;
-  font-family: 'Montserrat Alternates', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 1rem;
 }
 
@@ -91,7 +91,7 @@ margin: 0 0 5px;
 
     background-color: #222222;
 
-    background-image: linear-gradient(to left,transparent,transparent 50%,#fff 50%,#fff);
+    background-image: linear-gradient(to left,transparent,transparent 50%,#DCDCDC 50%,#DCDCDC);
     background-position: 100% 0;
     background-size: 200% 100%;
     transition: all .25s ease-in;
@@ -99,7 +99,7 @@ margin: 0 0 5px;
 
     color: #fff;
     font-weight: 700;
-    font-family: 'Montserrat Alternates', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 1rem;
 }
 
@@ -109,15 +109,14 @@ button:hover {
 }
 
 textarea {
-    /*margin: 10px 0;*/
     font-size: 1.5rem;
     width: 500px;
     padding: 5px 10px;
     outline: 0;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     cursor: pointer;
     border-width: 0;
     resize: none;
-    color: #fff;
-    background-color: #222222;
+    color: #222;
+    background-color: #DCDCDC;
 }

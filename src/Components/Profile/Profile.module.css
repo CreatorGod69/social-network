@@ -2,27 +2,17 @@
   grid-area: info;
   overflow: hidden;
 
+  background-color: #ffffff;
   margin: 20px;
+
+  display: flex;
+  justify-content: center;
 }
   
 .info__inner {
   display: flex;
-  align-items: center;
-}
-  
-.data h1 {
-  padding-bottom: 10px;
-  color: #222;
+  flex-direction: column;
 
-}
-
-.data p {
-  color: #222;
-}
-
-.info img {
-  width: 150px;
-  height: 150px;
-  background-size: 400px;
-  margin-right: 20px;
+  align-items: left;
+  padding: 20px;
 }
