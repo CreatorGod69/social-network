@@ -4,8 +4,7 @@ import Header from './Components/Header/Header';
 import Navbar from './Components/Navbar/Navbar';
 import Messages from './Components/Messages/Messages';
 import Profile from './Components/Profile/Profile';
-import {BrowserRouter, Route} from "react-router-dom"
-
+import {BrowserRouter, Route} from "react-router-dom";
 
 const App = (props) => {
   return (
@@ -18,12 +17,12 @@ const App = (props) => {
                 <div className="app-content">
                     <Route path="/messages" 
                       render={ () => <Messages 
-                        state={props.state.messages} addMessage={props.addMessage} /> }/>
+                        state={props.store.getState().messages} addMessage={props.store.addMessage} /> }/>
                     <Route path="/profile" 
                       render={ () => <Profile 
-                        state={props.state.profile} 
-                        addPost={props.addPost}
-                        updateNewPostText={props.updateNewPostText}/> }/>
+                        state={props.store.getState().profile} 
+                        addPost={props.store.addPost}
+                        updateNewPostText={props.store.updateNewPostText}/> }/>
                 </div>
             </div>
 
