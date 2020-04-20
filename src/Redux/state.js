@@ -24,13 +24,13 @@ let store = {
       newPostText: ""
     },
   },
-  getState() {
+  getState () {
     return this._state;
   },
-  _callSubscriber() {
+  _renderEntireTree () {
     console.log("State change");
   },
-  addPost(namePost, dataPost) {
+  addPost (namePost, dataPost) {
     let newPost = {
       id: 3,
       name: namePost,
@@ -39,20 +39,20 @@ let store = {
       img: "https://yt3.ggpht.com/a/AGF-l78VkDGB-FP-TBRgPfcaE42CblHIW5DD21A0-g=s800-c-k-c0xffffffff-no-rj-mo",
     };
     this._state.profile.PostsData.push(newPost);
-    this._callSubscriber(this._state);
+    this._renderEntireTree(this._state);
   },
   updateNewPostText(newText) {
     this._state.profile.newPostText = newText;
-    this._callSubscriber(this._state);
+    this._renderEntireTree(this._state);
   },
-  addMessage(message) {
+  addMessage (message) {
     let newMessage = {
       messages: message,
     };
     this._state.messages.MessagesData.push(newMessage);
-    this._callSubscriber(this._state);
+    this._renderEntireTree(this._state);
   },
-  subscribe(observer) {
+  subscribe (observer) {
     this._renderEntireTree = observer;
   }
 }

@@ -5,12 +5,12 @@ import * as serviceWorker from './serviceWorker';
 import React from 'react';
 import store from './Redux/state';
 
-let renderEntireTree = (store) => {
+let renderEntireTree = (state) => {
     ReactDOM.render(<App 
-        state={store._state} 
-        addPost={store.addPost} 
-        addMessage={store.addMessage} 
-        updateNewPostText={store.updateNewPostText}/>,
+        state={state} 
+        addPost={store.addPost.bind(store)} 
+        addMessage={store.addMessage.bind(store)} 
+        updateNewPostText={store.updateNewPostText.bind(store)}/>,
         document.getElementById('root'));
 }
 
