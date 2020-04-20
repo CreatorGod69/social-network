@@ -16,10 +16,9 @@ const Profile = (props) => {
         <div className={profile.info__inner}>
           <ProfileData/>
           <Input 
-          addPost={props.addPost} 
-          ProfileData={props.state.ProfileData} 
+          ProfileData={props.state.ProfileData}
           newPostText={props.state.newPostText}
-          updateNewPostText={props.updateNewPostText}/>
+          dispatch={props.dispatch}/>
 
           { PostsElements }
         </div>

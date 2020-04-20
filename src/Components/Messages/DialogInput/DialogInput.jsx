@@ -8,8 +8,8 @@ const DialogInput = (props) => {
             // debugger;
             let text = newMessageElement.current.value;
             if (text !== '') {
-                props.addMessage(text);
-                console.log(text);
+                // props.addMessage(text);
+                props.dispatch({type: 'ADD-MESSAGE', message: text});
             }
             newMessageElement.current.value = '';
         }

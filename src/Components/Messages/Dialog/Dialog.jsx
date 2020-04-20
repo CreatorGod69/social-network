@@ -10,7 +10,7 @@ const Dialog = (props) => {
             <div className={dialog.content}>
                 { MessagesElements }
             </div>
-            <DialogInput addMessage={props.addMessage}/>
+            <DialogInput dispatch={props.dispatch}/>
         </div>
     </div>
 }
