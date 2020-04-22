@@ -9,13 +9,13 @@ const DialogInput = (props) => {
             let text = newMessageElement.current.value;
             if (text !== '') {
                 // props.addMessage(text);
-                props.dispatch({type: 'ADD-MESSAGE', message: text});
+                props.dispatch({type: 'ADD-MESSAGE', body: text});
             }
-            props.dispatch({type: 'UPDATE-NEW-MESSAGES-TEXT', newText: ""});
+            props.dispatch({type: 'UPDATE-NEW-MESSAGES-TEXT', body: ""});
         }
 
         let onMessagesChange = () => {
-            props.dispatch({type: 'UPDATE-NEW-MESSAGES-TEXT', newText: newMessageElement.current.value});
+            props.dispatch({type: 'UPDATE-NEW-MESSAGES-TEXT', body: newMessageElement.current.value});
         }
 
         return <div className={dialog.form} action="">
@@ -25,6 +25,7 @@ const DialogInput = (props) => {
                     ref={newMessageElement} rows="3"
                     placeholder="Write a message"
                     onChange={onMessagesChange}
+                    value={props.newMessageText}
                     required></textarea>
             </div>
             <button className={dialog.btn} onClick={addMessage} href="">POST</button>

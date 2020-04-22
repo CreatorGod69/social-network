@@ -1,3 +1,5 @@
+
+
 let store = {
     _state: {
         messages: {
@@ -66,13 +68,12 @@ let store = {
             this._state.profile.newPostText = action.newText;
             this._callSubscriber(this._state);
         } else if (action.type === 'ADD-MESSAGE') {
-            let newMessage = {
-                messages: action.message,
-            };
-            this._state.messages.MessagesData.push(newMessage);
+            let body = this._state.messages.newMessageText;
+            this._state.messages.newMessageText = "";
+            this._state.messages.MessagesData.push({id: 4, message: body});
             this._callSubscriber(this._state);
         } else if (action.type === 'UPDATE-NEW-MESSAGES-TEXT') {
-            this._state.messages.newMessageText = action.newText;
+            this._state.messages.newMessageText = action.body;
             this._callSubscriber(this._state);
         }
     }
