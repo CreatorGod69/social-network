@@ -10,6 +10,7 @@ let store = {
                     message: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, natus. Quidem dolorem totam architecto eveniet unde mollitia, qui accusantium culpa?"
                 },
             ],
+            newMessageText: "",
             DialogsData: [
                 {id: 1, name: 'Maria'},
                 {id: 2, name: 'Katy'},
@@ -69,6 +70,9 @@ let store = {
                 messages: action.message,
             };
             this._state.messages.MessagesData.push(newMessage);
+            this._callSubscriber(this._state);
+        } else if (action.type === 'UPDATE-NEW-MESSAGES-TEXT') {
+            this._state.messages.newMessageText = action.newText;
             this._callSubscriber(this._state);
         }
     }
