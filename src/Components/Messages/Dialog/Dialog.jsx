@@ -4,7 +4,7 @@ import DialogInput from "../DialogInput/DialogInput";
 
 const Dialog = (props) => {
     // debugger;
-    let MessagesElements = props.MessagesData.map( message => <div><p className={`${dialog.other} + ${dialog.text}` }>{message.message}</p></div>);
+    let MessagesElements = props.MessagesData.map( message => <div><p className={`${dialog.me} + ${dialog.text}` }>{message.message}</p></div>);
 
     return <div className={dialog.dialog}>
         <div className={dialog.inner}>

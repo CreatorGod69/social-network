@@ -1,21 +1,22 @@
 import React from 'react';
 import input from './Input.module.css';
+import {addPostActionCreator, updateNewPostTextActionCreator} from "../../../Redux/state";
 
 const Input = (props) => {
     let newPostElement = React.createRef();
 
     let addPost = ()  => {
         if (newPostElement.current.value !== '') {
-            // props.addPost("Maria", "21/11/2004");
-            props.dispatch({type: 'ADD-POST', namePost: "Maria", dataPost:"21/11/2004"});
+            let action = addPostActionCreator("Maria", "10/11/2020");
+            props.dispatch(action);
         }
-        // props.updateNewPostText("");
-        props.dispatch({type: 'UPDATE-NEW-POST-TEXT', newText: ""});
+        props.dispatch(updateNewPostTextActionCreator(""));
     }
 
     let onPostChange = () => {
-        // props.updateNewPostText(newPostElement.current.value);
-        props.dispatch({type: 'UPDATE-NEW-POST-TEXT', newText: newPostElement.current.value});
+        let text = newPostElement.current.value;
+        let action = updateNewPostTextActionCreator(text);
+        props.dispatch(action);
     }
 
     return <div className={input.post}>

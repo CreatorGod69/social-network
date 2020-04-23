@@ -5,11 +5,11 @@ const DialogInput = (props) => {
         let newMessageElement = React.createRef();
 
         let addMessage = () => {
-            debugger;
+            // debugger;
             let text = newMessageElement.current.value;
             if (text !== '') {
                 // props.addMessage(text);
-                props.dispatch({type: 'ADD-MESSAGE', body: text});
+                props.dispatch({type: 'SEND-MESSAGE', body: text});
             }
             props.dispatch({type: 'UPDATE-NEW-MESSAGES-TEXT', body: ""});
         }
