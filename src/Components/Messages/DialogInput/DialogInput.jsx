@@ -1,21 +1,21 @@
 import React from 'react';
 import dialog from "./DialogInput.module.css";
+import {addMessagesActionCreator, updateNewMessagesText} from "../../../Redux/state";
 
 const DialogInput = (props) => {
         let newMessageElement = React.createRef();
 
         let addMessage = () => {
-            // debugger;
             let text = newMessageElement.current.value;
             if (text !== '') {
-                // props.addMessage(text);
-                props.dispatch({type: 'SEND-MESSAGE', body: text});
+                props.dispatch(addMessagesActionCreator());
             }
-            props.dispatch({type: 'UPDATE-NEW-MESSAGES-TEXT', body: ""});
+            props.dispatch(updateNewMessagesText(text));
         }
 
         let onMessagesChange = () => {
-            props.dispatch({type: 'UPDATE-NEW-MESSAGES-TEXT', body: newMessageElement.current.value});
+            let action = updateNewMessagesText(newMessageElement.current.value);
+            props.dispatch(action);
         }
 
         return <div className={dialog.form} action="">

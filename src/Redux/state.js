@@ -72,7 +72,6 @@ let store = {
             this._callSubscriber(this._state);
         } else if (action.type === SEND_MESSAGE) {
             let body = this._state.messages.newMessageText;
-            this._state.messages.newMessageText = "";
             this._state.messages.MessagesData.push({id: 4, message: body});
             this._callSubscriber(this._state);
         } else if (action.type === UPDATE_NEW_MESSAGES_TEXT) {
@@ -92,6 +91,14 @@ export const addPostActionCreator = (namePost, dataPost) => {
 
 export const updateNewPostTextActionCreator = (text) => ({type: UPDATE_NEW_POST_TEXT, newText: text});
 
+export const addMessagesActionCreator = () => ({type: SEND_MESSAGE});
+
+export const updateNewMessagesText = (text) => {
+    return {
+        type: UPDATE_NEW_MESSAGES_TEXT,
+        body: text
+    }
+}
 
 window.store = store;
 
