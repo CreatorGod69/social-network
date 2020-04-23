@@ -1,7 +1,5 @@
-const ADD_POST = 'ADD-POST';
-const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
-const  SEND_MESSAGE =  'SEND-MESSAGE';
-const UPDATE_NEW_MESSAGES_TEXT = 'UPDATE-NEW-MESSAGES-TEXT'
+import profileReducer from "./profile-reducer";
+import messagesReducer from "./messages-reducer";
 
 let store = {
     _state: {
@@ -57,46 +55,9 @@ let store = {
     },
 
     dispatch(action) {
-        if (action.type === ADD_POST) {
-            let newPost = {
-                id: 3,
-                name: action.namePost,
-                message: this._state.profile.newPostText,
-                data: action.dataPost,
-                img: "https://yt3.ggpht.com/a/AGF-l78VkDGB-FP-TBRgPfcaE42CblHIW5DD21A0-g=s800-c-k-c0xffffffff-no-rj-mo",
-            };
-            this._state.profile.PostsData.push(newPost);
-            this._callSubscriber(this._state);
-        } else if (action.type === UPDATE_NEW_POST_TEXT) {
-            this._state.profile.newPostText = action.newText;
-            this._callSubscriber(this._state);
-        } else if (action.type === SEND_MESSAGE) {
-            let body = this._state.messages.newMessageText;
-            this._state.messages.MessagesData.push({id: 4, message: body});
-            this._callSubscriber(this._state);
-        } else if (action.type === UPDATE_NEW_MESSAGES_TEXT) {
-            this._state.messages.newMessageText = action.body;
-            this._callSubscriber(this._state);
-        }
-    }
-}
-
-export const addPostActionCreator = (namePost, dataPost) => {
-    return {
-        type: ADD_POST,
-        namePost: namePost,
-        dataPost: dataPost
-    }
-}
-
-export const updateNewPostTextActionCreator = (text) => ({type: UPDATE_NEW_POST_TEXT, newText: text});
-
-export const addMessagesActionCreator = () => ({type: SEND_MESSAGE});
-
-export const updateNewMessagesText = (text) => {
-    return {
-        type: UPDATE_NEW_MESSAGES_TEXT,
-        body: text
+        this._state.profile = profileReducer(this._state.profile, action)
+        this._state.messages = messagesReducer(this._state.messages, action)
+        this._callSubscriber(this._state);
     }
 }
 

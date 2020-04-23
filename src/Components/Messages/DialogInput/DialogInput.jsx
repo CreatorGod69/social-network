@@ -1,6 +1,6 @@
 import React from 'react';
 import dialog from "./DialogInput.module.css";
-import {addMessagesActionCreator, updateNewMessagesText} from "../../../Redux/state";
+import {addMessagesActionCreator, updateNewMessagesText} from "../../../Redux/messages-reducer";
 
 const DialogInput = (props) => {
         let newMessageElement = React.createRef();
