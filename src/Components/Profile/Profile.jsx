@@ -1,6 +1,6 @@
 import React from 'react';
 import profile from './Profile.module.css';
-import Input from "./ProfileInput/Input";
+import Input from "./ProfileInput/InputContainer";
 import Post from './Post/Post'
 import ProfileData from './ProfileData/ProfileData';
 
@@ -15,10 +15,7 @@ const Profile = (props) => {
     return <div className={profile.info}>
         <div className={profile.info__inner}>
           <ProfileData/>
-          <Input 
-          ProfileData={props.state.ProfileData}
-          newPostText={props.state.newPostText}
-          dispatch={props.dispatch}/>
+          <Input store = {props.store}/>
 
           { PostsElements }
         </div>

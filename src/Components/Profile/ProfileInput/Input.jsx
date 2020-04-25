@@ -1,22 +1,17 @@
 import React from 'react';
 import input from './Input.module.css';
-import {addPostActionCreator, updateNewPostTextActionCreator} from "../../../Redux/profile-reducer";
 
 const Input = (props) => {
     let newPostElement = React.createRef();
 
     let addPost = ()  => {
-        if (newPostElement.current.value !== '') {
-            let action = addPostActionCreator("Maria", "10/11/2020");
-            props.dispatch(action);
-        }
-        props.dispatch(updateNewPostTextActionCreator(""));
+        props.addPost(newPostElement.current.value);
+        props.updateNewPostText("");
     }
 
     let onPostChange = () => {
         let text = newPostElement.current.value;
-        let action = updateNewPostTextActionCreator(text);
-        props.dispatch(action);
+        props.updateNewPostText(text);
     }
 
     return <div className={input.post}>

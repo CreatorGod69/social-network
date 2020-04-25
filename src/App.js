@@ -18,16 +18,18 @@ const App = (props) => {
                 <div className="app-content">
                     <Route path="/messages" 
                       render={ () => <Messages 
-                        state={props.state.messages} dispatch={props.dispatch} /> }/>
+                        store={props.store} /> }/>
                     <Route path="/profile" 
-                      render={ () => <Profile 
-                        state={props.state.profile}
-                        dispatch={props.dispatch}/> }/>
+                      render={ () => <Profile
+                          store = {props.store}
+                      state = {props.store.getState().profile}/> }/>
                 </div>
             </div>
 
         </div>
     </BrowserRouter>)
 }
+
+
 
 export default App;

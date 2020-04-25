@@ -7,6 +7,7 @@ import store from './Redux/redux-store';
 
 let renderEntireTree = (state) => {
     ReactDOM.render(<App
+        store = {store}
         state={state} 
         dispatch={store.dispatch.bind(store)}/>,
         document.getElementById('root'));
@@ -18,5 +19,7 @@ store.subscribe(() => {
     let state = store.getState();
     renderEntireTree(state);
 });
+
+window.store = store;
 
 serviceWorker.unregister();
