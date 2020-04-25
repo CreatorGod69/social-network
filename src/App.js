@@ -21,7 +21,7 @@ const App = (props) => {
                         state={props.state.messages} dispatch={props.dispatch} /> }/>
                     <Route path="/profile" 
                       render={ () => <Profile 
-                        state={props.state.profile} 
+                        state={props.state.profile}
                         dispatch={props.dispatch}/> }/>
                 </div>
             </div>
