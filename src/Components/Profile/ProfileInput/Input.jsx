@@ -1,7 +1,14 @@
 import React from 'react';
 import input from './Input.module.css';
+import Post from "../Post/Post";
 
 const Input = (props) => {
+    let PostsElements = props.post.map (post => <Post
+        img = {post.img}
+        name = {post.name}
+        message = {post.message}
+        data = {post.data}/>
+    );
     let newPostElement = React.createRef();
 
     let addPost = ()  => {
@@ -28,7 +35,10 @@ const Input = (props) => {
                     <button className={input.btn} onClick={addPost} href="">POST</button>
                 </div>
             </div>
+        <div>
+        { PostsElements }
         </div>
+    </div>
 }
 
 export default Input;

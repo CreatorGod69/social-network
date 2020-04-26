@@ -20,7 +20,9 @@ const InputContainer = (props) => {
     return (<Input
         updateNewPostText={onPostChange}
         addPost={addPost}
-        newPostText={state.profile.newPostText}/>)
+        newPostText={state.profile.newPostText}
+        post = {props.store.getState().profile.PostsData}
+    />)
 }
 
 export default InputContainer;
