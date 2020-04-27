@@ -7,7 +7,7 @@ const Profile = (props) => {
     return <div className={profile.info}>
         <div className={profile.info__inner}>
           <ProfileData/>
-          <Input store = {props.store}/>
+          <Input />
         </div>
     </div>
 

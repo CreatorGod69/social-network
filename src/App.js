@@ -8,27 +8,24 @@ import {BrowserRouter, Route} from "react-router-dom"
 
 
 const App = (props) => {
-  return (
-    <BrowserRouter>
-        <div className="app-wrapper">
-          <Header />
+    return (
+        <BrowserRouter>
+            <div className="app-wrapper">
+                <Header/>
 
-            <div className="app-inner">
-                <Navbar />
-                <div className="app-content">
-                    <Route path="/messages" 
-                      render={ () => <Messages 
-                        store={props.store} /> }/>
-                    <Route path="/profile" 
-                      render={ () => <Profile
-                          store={props.store}/> }/>
+                <div className="app-inner">
+                    <Navbar/>
+                    <div className="app-content">
+                        <Route path="/messages"
+                               render={() => <Messages />}/>
+                        <Route path="/profile"
+                               render={() => <Profile />}/>
+                    </div>
                 </div>
+
             </div>
-
-        </div>
-    </BrowserRouter>)
+        </BrowserRouter>)
 }
-
 
 
 export default App;
