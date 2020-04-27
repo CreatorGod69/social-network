@@ -31,11 +31,16 @@ const profileReducer = (state = initialState, action) => {
                 data: action.dataPost,
                 img: "https://yt3.ggpht.com/a/AGF-l78VkDGB-FP-TBRgPfcaE42CblHIW5DD21A0-g=s800-c-k-c0xffffffff-no-rj-mo",
             };
-            state.PostsData.push(newPost);
-            return state;
+            return {
+                ...state,
+                newPostText: "",
+                PostsData: [...state.PostsData, newPost]
+            }
         case UPDATE_NEW_POST_TEXT:
-            state.newPostText = action.newText;
-            return state;
+            return {
+                ...state,
+                newPostText: action.newText
+            }
         default:
             return state;
     }

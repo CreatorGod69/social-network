@@ -1,21 +1,19 @@
 import React from 'react';
-import messages from './Messages.module.css';
 import DialogName from "./DialogName/DialogName";
-// import DialogInput from "./MessagesContainer";
+import messages from './Messages.module.css';
+import Dialog from "./Dialog/Dialog";
 
 const Messages = (props) => {
-    debugger
     let MessagesElements = props.MessagesData
-        .map(message => <div><p className={`${messages.me} + ${messages.text}`}>{message.message}</p></div>);
+        .map(messages => <Dialog messages={messages.message} key={messages.id} id={messages.id}/>);
 
     let DialogElements = props.DialogsData
-        .map(dialog => <DialogName name={dialog.name} id={dialog.id}/>);
+        .map(dialog => <DialogName name={dialog.name} key={dialog.id} id={dialog.id}/>);
 
     let newMessageElement = React.createRef();
 
     let addMessage = () => {
-        props.addMessages();
-        props.updateNewMessagesText("");
+        props.addMessages(newMessageElement.current.value);
     }
 
     let onMessagesChange = () => {

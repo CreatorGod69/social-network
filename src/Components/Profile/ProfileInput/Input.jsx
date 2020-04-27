@@ -4,6 +4,7 @@ import Post from "../Post/Post";
 
 const Input = (props) => {
     let PostsElements = props.post.map (post => <Post
+        key={post.id}
         img = {post.img}
         name = {post.name}
         message = {post.message}
@@ -13,7 +14,6 @@ const Input = (props) => {
 
     let addPost = ()  => {
         props.addPost(newPostElement.current.value);
-        props.updateNewPostText("");
     }
 
     let onPostChange = () => {
