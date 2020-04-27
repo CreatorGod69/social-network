@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import Header from './Components/Header/Header';
 import Navbar from './Components/Navbar/Navbar';
-import Messages from './Components/Messages/Messages';
+import Messages from './Components/Messages/MessagesContainer';
 import Profile from './Components/Profile/Profile';
 import {BrowserRouter, Route} from "react-router-dom"
 
@@ -21,8 +21,7 @@ const App = (props) => {
                         store={props.store} /> }/>
                     <Route path="/profile" 
                       render={ () => <Profile
-                          store = {props.store}
-                      state = {props.store.getState().profile}/> }/>
+                          store={props.store}/> }/>
                 </div>
             </div>
 
