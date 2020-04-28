@@ -1,5 +1,6 @@
 .messages {
     margin: 20px;
+    margin-top: 0;
 
     display: grid;
     grid-template-columns: 2fr 10fr;

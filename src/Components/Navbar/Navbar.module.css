@@ -1,9 +1,8 @@
 .nav {
   height: 500px;
+  width: 300px;
 
   padding: 30px;
-  margin: 20px;
-  margin-left: 0;
 
   grid-area: nav;
 
