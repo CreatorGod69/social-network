@@ -5,8 +5,8 @@ let SET_CURRENT_PAGE = 'SET-CURRENT-PAGE';
 let TOTAL_USERS_COUNT = 'TOTAL_USERS_COUNT';
 let initialState = {
     usersData: [],
-    pageSize: 10,
-    totalUsersCount: 0,
+    pageSize: 4,
+    totalUsersCount:0,
     currentPage: 2
 }
 
@@ -64,6 +64,6 @@ export const setCurrentPageAC = (currentPage) => {
 
 export const setUsersAC = (users) => ({type: SET_USERS, users});
 
-export const totalUsersCountAC = (totalUsersCount) => ({type: TOTAL_USERS_COUNT, count:totalUsersCount});
+export const totalUsersCountAC = (totalUsersCount) => ({type: TOTAL_USERS_COUNT, count: totalUsersCount});
 
 export default usersReducer;
