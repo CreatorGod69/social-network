@@ -55,5 +55,30 @@
 .btn {
     width: 150px;
     font-size: 0.8rem;
-    /*height: 30px;*/
+}
+
+.selector {
+    margin-left: 20px;
+    background-color: #222;
+    display: flex;
+    justify-content: center;
+}
+
+span {
+    margin-left: 20px;
+    font-weight: bold;
+    color: #fff;
+    padding: 20px;
+    cursor: pointer;
+
+    transition: font-size .2s linear;
+}
+
+
+.selectPage, span:hover {
+    font-size: 2rem;
+}
+
+span:first-child {
+    margin: 0;
 }
