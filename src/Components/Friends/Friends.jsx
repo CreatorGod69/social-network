@@ -1,6 +1,7 @@
 import React from 'react';
 import u from "./Friends.module.css";
 import userPhoto from "./../../Assets/Images/user-man.png";
+import {NavLink} from "react-router-dom";
 
 
 const Friends = (props) => {
@@ -19,14 +20,13 @@ const Friends = (props) => {
                 }} className={props.currentPage === page && u.selectPage}>{page}</span>
             })}
         </div>
-        {/*<Preloader/>*/}
         {
             props.usersData.map(usersData => <div key={usersData.id}>
                 <div className={u.info}>
                     <div className={u.inner}>
                         <div className={u.review}>
-                            <img src={usersData.photos.small != null ? usersData.photos.small : userPhoto}
-                                 alt=""></img>
+                            <NavLink to={'/profile/' + usersData.id}><img src={usersData.photos.small != null ? usersData.photos.small : userPhoto}
+                                          alt=""></img></NavLink>
                             <div className={u.text}>
                                 <h1>{usersData.name}</h1>
                                 <p>{usersData.status != null ? usersData.status : "Hello! I am a new user of this social network."}</p>
