@@ -2,6 +2,7 @@ import React from 'react';
 import u from "./Friends.module.css";
 import userPhoto from "./../../Assets/Images/user-man.png";
 
+
 const Friends = (props) => {
     // let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
 
@@ -18,6 +19,7 @@ const Friends = (props) => {
                 }} className={props.currentPage === page && u.selectPage}>{page}</span>
             })}
         </div>
+        {/*<Preloader/>*/}
         {
             props.usersData.map(usersData => <div key={usersData.id}>
                 <div className={u.info}>
