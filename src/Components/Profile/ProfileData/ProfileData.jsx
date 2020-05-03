@@ -7,7 +7,6 @@ const ProfileData = (props) => {
     if(!props.profile.profile) {
         return <Preloader />
     }
-    debugger
         return <div className={profile.profile}>
             <img src={props.profile.profile.photos.small != null ? props.profile.profile.photos.small : userPhoto} alt=""/>
             <div className={profile.data}>

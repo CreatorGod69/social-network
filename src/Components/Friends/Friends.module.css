@@ -57,6 +57,18 @@
     font-size: 0.8rem;
 }
 
+.btnActive {
+    background-color: #DCDCDC;
+    background-image: linear-gradient(to left,transparent,transparent 50%,#222 50%,#222);
+    width: 150px;
+    color: #222222;
+    font-size: 0.8rem;
+}
+
+.btnActive:hover {
+    color: #fff;
+}
+
 .selector {
     margin-left: 20px;
     background-color: #222;
