@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Header from './Components/Header/Header';
+import Header from './Components/Header/HeaderContainer';
 import Navbar from './Components/Navbar/Navbar';
 import Messages from './Components/Messages/MessagesContainer';
 import Profile from './Components/Profile/ProfileContainer';
@@ -9,9 +9,11 @@ import Friends from "./Components/Friends/FriendsContainer";
 
 
 const App = (props) => {
+
     return (
         <BrowserRouter>
             <div className="app-wrapper">
+
                 <Header/>
 
                 <div className="app-inner">

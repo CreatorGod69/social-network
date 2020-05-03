@@ -17,9 +17,9 @@
   font-weight: 800;
 }
 
-.header h1 {
+.header .login_block {
   text-decoration: none;
   font-size: 1.5rem;
   color: #fff;
-  font-weight: 400;
+  font-weight: 700;
 }

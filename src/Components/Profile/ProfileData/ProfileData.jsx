@@ -11,11 +11,11 @@ const ProfileData = (props) => {
         return <div className={profile.profile}>
             <img src={props.profile.profile.photos.small != null ? props.profile.profile.photos.small : userPhoto} alt=""/>
             <div className={profile.data}>
-                <h1>John Doe</h1>
-                <p>Date of Birth: 21 january</p>
-                <p>City: Moscow</p>
-                <p>Phone: +7(901)112-37-46</p>
-                <p>Web Site: https://beactive.ru</p>
+                <h1>{props.profile.profile.fullName}</h1>
+                <p>VK: {props.profile.profile.contacts.vk != null ? props.profile.profile.contacts.vk : "null"}</p>
+                <p>Job: {props.profile.profile.lookingForAJobDescription != null ? props.profile.profile.lookingForAJobDescription : "null"}</p>
+                <p>GitHub: {props.profile.profile.contacts.github != null ? props.profile.profile.contacts.github : "null"}</p>
+                <p>Web Site: {props.profile.profile.contacts.website != null ? props.profile.profile.contacts.website : "null"}</p>
             </div>
         </div>
 }
