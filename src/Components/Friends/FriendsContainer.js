@@ -1,41 +1,29 @@
 import {connect} from "react-redux";
-import {
-    follow,
-    unFollow,
-    setUsers,
-    setCurrentPage,
-    totalUsersCount,
-    toggleIsFetching
-} from './../../Redux/users-reducer'
+import {follow, unFollow, setUsers, setCurrentPage, totalUsersCount, toggleIsFetching, toggleFollowingInProgress} from '../../Redux/users-reducer'
 import Friends from "./Friends";
 import React from "react";
-import * as axios from "axios";
 import Preloader from "../Preloader/Preloader";
+import {getUsers} from "../../Api/Api";
 
 class FriendsClassComponent extends React.Component {
 
     componentDidMount() {
         this.props.toggleIsFetching(true);
-        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`, {
-            withCredentials: true
-        })
-            .then(response => {
-                this.props.toggleIsFetching(false);
-                this.props.setUsers(response.data.items);
-                this.props.totalUsersCount(response.data.totalCount);
-            });
+        getUsers(this.props.currentPage, this.props.pageSize).then(data => {
+            this.props.toggleIsFetching(false);
+            this.props.setUsers(data.items);
+            this.props.totalUsersCount(data.totalCount);
+        });
     }
 
     onPageChanged = (pageNumber) => {
         this.props.toggleIsFetching(true);
         this.props.setCurrentPage(pageNumber);
-        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${pageNumber}&count=${this.props.pageSize}`, {
-            withCredentials: true,
-        })
-            .then(response => {
-                this.props.toggleIsFetching(false);
-                this.props.setUsers(response.data.items)
-            });
+
+        getUsers(pageNumber, this.props.pageSize).then(data => {
+            this.props.toggleIsFetching(false);
+            this.props.setUsers(data.items)
+        });
     }
 
     render() {
@@ -50,6 +38,8 @@ class FriendsClassComponent extends React.Component {
                      unFollow={this.props.unFollow}
                      onPageChanged={this.onPageChanged}
                      isFetching={this.isFetching}
+                     followingInProgress={this.props.followingInProgress}
+                     toggleFollowingInProgress={this.props.toggleFollowingInProgress}
             />
         </>
     }
@@ -62,6 +52,7 @@ let mapStateToProps = (state) => {
         totalUsersCount: state.users.totalUsersCount,
         currentPage: state.users.currentPage,
         isFetching: state.users.isFetching,
+        followingInProgress: state.users.followingInProgress,
     }
 }
 
@@ -72,6 +63,7 @@ const FriendsContainer = connect(mapStateToProps, {
     setCurrentPage,
     totalUsersCount,
     toggleIsFetching,
+    toggleFollowingInProgress,
 })(FriendsClassComponent);
 
 export default FriendsContainer;

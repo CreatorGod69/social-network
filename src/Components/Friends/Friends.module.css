@@ -57,6 +57,11 @@
     font-size: 0.8rem;
 }
 
+.btn:disabled,
+.btnActive:disabled {
+    opacity: .5;
+}
+
 .btnActive {
     background-color: #DCDCDC;
     background-image: linear-gradient(to left,transparent,transparent 50%,#222 50%,#222);
