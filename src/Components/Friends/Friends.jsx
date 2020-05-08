@@ -2,7 +2,6 @@ import React from 'react';
 import u from "./Friends.module.css";
 import userPhoto from "../../Assets/Images/user-man.png";
 import {NavLink} from "react-router-dom";
-import {followed} from "../../Api/Api";
 
 
 const Friends = (props) => {
@@ -34,26 +33,10 @@ const Friends = (props) => {
                             </div>
                             {usersData.followed
                                 ? <button disabled={props.followingInProgress.some(id => id === usersData.id)} onClick={() => {
-                                    props.toggleFollowingInProgress(true,usersData.id);
-                                    console.log("Disable");
-                                    followed(usersData.id).then(data => {
-                                            if (data.resultCode === 1) {
-                                                props.unFollow(usersData.id)
-                                            }
-                                        props.toggleFollowingInProgress(false,usersData.id);
-
-                                        console.log("Active");
-
-                                    });
+                                    props.unFollow(usersData.id);
                                 }} className={u.btnActive}>UNFOLLOW</button>
                                 : <button disabled={props.followingInProgress.some(id => id === usersData.id)}  onClick={() => {
-                                    props.toggleFollowingInProgress(true, usersData.id);
-                                    followed(usersData.id).then(data => {
-                                            if (data.resultCode === 0) {
-                                                props.follow(usersData.id)
-                                            }
-                                        props.toggleFollowingInProgress(false,usersData.id);
-                                    });
+                                    props.follow(usersData.id);
                                 }} className={u.btn}>FOLLOW</button>}
 
                         </div>

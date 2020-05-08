@@ -6,6 +6,7 @@ import Messages from './Components/Messages/MessagesContainer';
 import Profile from './Components/Profile/ProfileContainer';
 import {BrowserRouter, Route} from "react-router-dom"
 import Friends from "./Components/Friends/FriendsContainer";
+import Login from "./Components/Login/Login";
 
 
 const App = (props) => {
@@ -25,6 +26,8 @@ const App = (props) => {
                                render={() => <Profile />}/>
                         <Route path="/users"
                                render={() => <Friends />}/>
+                        <Route path="/login"
+                               render={() => <Login />}/>
                     </div>
                 </div>
 

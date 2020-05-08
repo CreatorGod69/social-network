@@ -8,14 +8,29 @@ const instanse = axios.create({
     }
 });
 
-export const getUsers = (currentPage=1, pageSize=10) => {
-    return instanse.get(`users?page=${currentPage}&count=${pageSize}`).then(response => {
-        return response.data
-    })
+export const usersAPI = {
+    getUsers(currentPage=1, pageSize=10) {
+        return instanse.get(`users?page=${currentPage}&count=${pageSize}`).then(response => {
+            return response.data
+        })
+    },
+    follow(usersData) {
+        return instanse.post(`follow/${usersData}`).then(response => {
+            return response.data
+        })
+    },
+    unFollow(usersData) {
+        return instanse.delete(`follow/${usersData}`).then(response => {
+            return response.data
+        })
+    },
+    getProfile(userId) {
+        return instanse.get(`profile/${userId}`)
+    }
 }
 
-export const followed = (usersData) => {
-    return instanse.post(`follow/${usersData}`).then(response => {
-        return response.data
-    })
+export const authAPI = {
+    me() {
+        return instanse.get(`auth/me`, {withCredentials: true})
+    }
 }

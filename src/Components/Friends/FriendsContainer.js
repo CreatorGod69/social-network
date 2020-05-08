@@ -1,29 +1,26 @@
 import {connect} from "react-redux";
-import {follow, unFollow, setUsers, setCurrentPage, totalUsersCount, toggleIsFetching, toggleFollowingInProgress} from '../../Redux/users-reducer'
 import Friends from "./Friends";
 import React from "react";
 import Preloader from "../Preloader/Preloader";
-import {getUsers} from "../../Api/Api";
+import {
+    follow,
+    getUsersThunkCreator,
+    setCurrentPage,
+    toggleFollowingInProgress,
+    unFollow,
+    followThunkCreator,
+    unFollowThunkCreator
+
+} from "../../Redux/users-reducer";
 
 class FriendsClassComponent extends React.Component {
 
     componentDidMount() {
-        this.props.toggleIsFetching(true);
-        getUsers(this.props.currentPage, this.props.pageSize).then(data => {
-            this.props.toggleIsFetching(false);
-            this.props.setUsers(data.items);
-            this.props.totalUsersCount(data.totalCount);
-        });
+        this.props.getUsersThunkCreator(this.props.currentPage, this.props.pageSize);
     }
 
     onPageChanged = (pageNumber) => {
-        this.props.toggleIsFetching(true);
-        this.props.setCurrentPage(pageNumber);
-
-        getUsers(pageNumber, this.props.pageSize).then(data => {
-            this.props.toggleIsFetching(false);
-            this.props.setUsers(data.items)
-        });
+        this.props.getUsersThunkCreator(pageNumber, this.props.pageSize);
     }
 
     render() {
@@ -34,12 +31,12 @@ class FriendsClassComponent extends React.Component {
                      pageSize={this.props.pageSize}
                      currentPage={this.props.currentPage}
                      usersData={this.props.usersData}
-                     follow={this.props.follow}
-                     unFollow={this.props.unFollow}
                      onPageChanged={this.onPageChanged}
                      isFetching={this.isFetching}
                      followingInProgress={this.props.followingInProgress}
                      toggleFollowingInProgress={this.props.toggleFollowingInProgress}
+                     follow={this.props.followThunkCreator}
+                     unFollow={this.props.unFollowThunkCreator}
             />
         </>
     }
@@ -59,11 +56,11 @@ let mapStateToProps = (state) => {
 const FriendsContainer = connect(mapStateToProps, {
     follow,
     unFollow,
-    setUsers,
     setCurrentPage,
-    totalUsersCount,
-    toggleIsFetching,
     toggleFollowingInProgress,
+    getUsersThunkCreator,
+    followThunkCreator,
+    unFollowThunkCreator
 })(FriendsClassComponent);
 
 export default FriendsContainer;
