@@ -9,14 +9,14 @@ const Friends = (props) => {
 
     let pages = [];
 
-    for (let i = 1; i < 5; /*pagesCount*/ i++) {
+    for (let i = 1; i < /*pagesCount*/6; i++) {
         pages.push(i);
     }
     return <div>
         <div className={u.selector}>
             {pages.map(page => {
-                return <span onClick={() => {
-                    props.onPageChanged(page)
+                return <span onClick={(e) => {
+                    props.onPageChanged(page);
                 }} className={props.currentPage === page && u.selectPage}>{page}</span>
             })}
         </div>

@@ -1,0 +1,16 @@
+.status {
+    padding: 20px;
+    background-color: #000000;
+    color: #fff;
+    font-weight: 700;
+    margin-top: 10px;
+    width: 500px;
+    cursor: pointer;
+}
+
+.status input {
+    width: 460px;
+    font-size: 1rem;
+    background-color: #000000;
+    color: #fff;
+}

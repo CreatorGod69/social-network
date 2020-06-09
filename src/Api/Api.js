@@ -9,7 +9,7 @@ const instanse = axios.create({
 });
 
 export const usersAPI = {
-    getUsers(currentPage=1, pageSize=10) {
+    getUsers(currentPage=2, pageSize=10) {
         return instanse.get(`users?page=${currentPage}&count=${pageSize}`).then(response => {
             return response.data
         })
@@ -25,7 +25,20 @@ export const usersAPI = {
         })
     },
     getProfile(userId) {
+        console.warn("Obsolete method. Please profileAPI object.")
+        return profileAPI.getProfile(userId)
+    }
+}
+
+export const profileAPI = {
+    getProfile(userId) {
         return instanse.get(`profile/${userId}`)
+    },
+    getStatus(userId) {
+        return instanse.get(`profile/status/${userId}`)
+    },
+    updateStatus(status) {
+        return instanse.put(`profile/status`, {status})
     }
 }
 

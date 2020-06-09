@@ -12,6 +12,9 @@ import {
     unFollowThunkCreator
 
 } from "../../Redux/users-reducer";
+import withAuthRedirect from "../../HOC/withAuthRedirect";
+import {compose} from "redux";
+
 
 class FriendsClassComponent extends React.Component {
 
@@ -53,14 +56,10 @@ let mapStateToProps = (state) => {
     }
 }
 
-const FriendsContainer = connect(mapStateToProps, {
-    follow,
-    unFollow,
-    setCurrentPage,
-    toggleFollowingInProgress,
-    getUsersThunkCreator,
-    followThunkCreator,
-    unFollowThunkCreator
-})(FriendsClassComponent);
-
-export default FriendsContainer;
+export default compose(
+    connect(mapStateToProps, {
+        follow, unFollow, setCurrentPage, toggleFollowingInProgress,
+        getUsersThunkCreator, followThunkCreator, unFollowThunkCreator
+    }),
+    withAuthRedirect
+)(FriendsClassComponent);
