@@ -22,7 +22,7 @@ const ProfileData = (props) => {
                 <p>Web Site: {props.profile.profile.contacts.website != null ? props.profile.profile.contacts.website : "null"}</p>
             </div>
         </div>
-            <ProfileStatus profile={props.profile} status={props.status} updateStatus={props.updateStatus} welcome={welcome}/>
+            <ProfileStatus profile={props.profile} updateStatus={props.updateStatus} welcome={welcome}/>
         </>
 }
 
