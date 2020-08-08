@@ -16,10 +16,10 @@ const ProfileData = (props) => {
             <img src={props.profile.profile.photos.small != null ? props.profile.profile.photos.small : userPhoto} alt=""/>
             <div className={profile.data}>
                 <h1>{props.profile.profile.fullName}</h1>
-                <p>VK: {props.profile.profile.contacts.vk != null ? props.profile.profile.contacts.vk : "null"}</p>
-                <p>Job: {props.profile.profile.lookingForAJobDescription != null ? props.profile.profile.lookingForAJobDescription : "null"}</p>
-                <p>GitHub: {props.profile.profile.contacts.github != null ? props.profile.profile.contacts.github : "null"}</p>
-                <p>Web Site: {props.profile.profile.contacts.website != null ? props.profile.profile.contacts.website : "null"}</p>
+                <p>VK: {props.profile.profile.contacts.vk != null ? props.profile.profile.contacts.vk : "-------"}</p>
+                <p>Job: {props.profile.profile.lookingForAJobDescription != null ? props.profile.profile.lookingForAJobDescription : "-------"}</p>
+                <p>GitHub: {props.profile.profile.contacts.github != null ? props.profile.profile.contacts.github : "-------"}</p>
+                <p>Web Site: {props.profile.profile.contacts.website != null ? props.profile.profile.contacts.website : "-------"}</p>
             </div>
         </div>
             <ProfileStatus profile={props.profile} updateStatus={props.updateStatus} welcome={welcome}/>

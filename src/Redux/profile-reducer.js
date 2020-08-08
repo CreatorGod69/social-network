@@ -1,4 +1,5 @@
 import {profileAPI, usersAPI} from "../Api/Api"
+import userPhoto from "./../Assets/Images/user-man.png";
 
 const ADD_POST = 'ADD-POST'
 const SET_STATUS = 'SET_STATUS'
@@ -31,11 +32,11 @@ const profileReducer = (state = initialState, action) => {
     switch (action.type) {
         case ADD_POST:
             let newPost = {
-                id: 3,
+                id: 7731,
                 name: action.namePost,
                 message: state.newPostText,
                 data: action.dataPost,
-                img: "https://yt3.ggpht.com/a/AGF-l78VkDGB-FP-TBRgPfcaE42CblHIW5DD21A0-g=s800-c-k-c0xffffffff-no-rj-mo",
+                img: userPhoto,
             };
             return {
                 ...state,

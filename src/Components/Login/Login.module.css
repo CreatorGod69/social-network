@@ -13,5 +13,27 @@
 }
 
 .login_button {
-    width: 500px;
+    background-color: #222222;
+    background-image: linear-gradient(to left,transparent,transparent 50%,#fff 50%,#fff);
+
+}
+
+.checkbox {
+    margin-bottom: 20px;
+
+    content: "";
+    width: 20px;
+    height: 20px;
+    border: 1px solid #dddddd;
+    background-color: #ffffff;
+}
+
+.title {
+    margin-bottom: 20px;
+
+    font-size: 3rem;
+}
+
+.checkbox_title {
+    font-weight: 500;
 }
