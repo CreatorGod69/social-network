@@ -1,4 +1,4 @@
-import {profileAPI, usersAPI} from "../Api/Api"
+import {profileAPI} from "../Api/Api"
 import userPhoto from "./../Assets/Images/user-man.png";
 
 const ADD_POST = 'ADD-POST'
@@ -69,7 +69,7 @@ export const setUsersProfile = (profile) => ({type: SET_USER_PROFILE, profile})
 export const setStatus = (status) => ({type: SET_STATUS, status})
 
 export const getUsersProfile = (userId) => (dispatch) => {
-    usersAPI.getProfile(userId).then(response => {
+    profileAPI.getProfile(userId).then(response => {
         dispatch(setUsersProfile(response.data))
     })
 }

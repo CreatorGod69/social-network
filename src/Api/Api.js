@@ -1,10 +1,10 @@
-import * as axios from "axios";
+import * as axios from 'axios'
 
 const instanse = axios.create({
     withCredentials: true,
     baseURL: 'https://social-network.samuraijs.com/api/1.0/',
     headers: {
-        "API-KEY": "ae07db0a-7a22-4b84-977a-0ecdb0a7e5fa"
+        'API-KEY': 'ae07db0a-7a22-4b84-977a-0ecdb0a7e5fa'
     }
 });
 
@@ -23,10 +23,6 @@ export const usersAPI = {
         return instanse.delete(`follow/${usersData}`).then(response => {
             return response.data
         })
-    },
-    getProfile(userId) {
-        console.warn("Obsolete method. Please profileAPI object.")
-        return profileAPI.getProfile(userId)
     }
 }
 

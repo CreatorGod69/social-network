@@ -41,7 +41,7 @@ const InputReduxForm = reduxForm({
 
 const Input = (props) => {
     const onSubmit = (value) => {
-        props.addPost(value.post)
+        props.addPost(value.profile)
     }
 
     return <InputReduxForm post={props.post} updateNewPostText={props.updateNewPostText} onSubmit={onSubmit}/>
