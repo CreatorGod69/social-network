@@ -1,6 +1,6 @@
 import React from 'react'
 import profile from './ProfileData.module.css'
-import Preloader from '../../Preloader/Preloader'
+import Preloader from './../../common/Preloader/Preloader'
 import userPhoto from '../../../assets/images/user-man.png'
 import ProfileStatus from '../ProfileStatus/ProfileStatus'
 

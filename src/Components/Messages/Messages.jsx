@@ -2,18 +2,20 @@ import React from 'react'
 import DialogName from './DialogName/DialogName'
 import messages from './Messages.module.css'
 import Dialog from './Dialog/Dialog'
+import { Textarea } from './../common/FormsControls/FormsControls'
+import { required, maxLenghtCreator } from './../../utils/validators'
 
 import { reduxForm, reset, Field } from 'redux-form'
+
+let maxLenght30 = maxLenghtCreator(30)
 
 const DialogForm = (props) => {
     return <form className={messages.form} onSubmit={props.handleSubmit}>
             <Field
             className={messages.textarea} 
-            rows={'3'}
-            placeholder={'Write a message'}
-            component={'textarea'}
-            name={'dialog'}
-            required></Field>
+            validate={[required, maxLenght30]}
+            component={Textarea}
+            name={'dialog'}></Field>
         <button className={messages.btn}>POST</button>
     </form>
 }
