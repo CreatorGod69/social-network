@@ -1,6 +1,6 @@
-import {addPostActionCreator} from "../../../Redux/profile-reducer"
-import Input from "./Input"
-import {connect} from "react-redux"
+import {addPostActionCreator} from '../../../redux/profile-reducer'
+import Input from './Input'
+import {connect} from 'react-redux'
 
 let mapStateToProps = (state) => {
     return {
@@ -19,6 +19,6 @@ let mapDispatchToProps = (dispatch) => {
     }
 }
 
-const InputContainer = connect(mapStateToProps, mapDispatchToProps)(Input);
+const InputContainer = connect(mapStateToProps, mapDispatchToProps)(Input)
 
-export default InputContainer;
+export default InputContainer

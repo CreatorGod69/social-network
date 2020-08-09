@@ -1,5 +1,5 @@
-import {profileAPI} from "../Api/Api"
-import userPhoto from "./../Assets/Images/user-man.png";
+import {profileAPI} from "../api/Api"
+import userPhoto from "./../assets/images/user-man.png";
 
 const ADD_POST = 'ADD-POST'
 const SET_STATUS = 'SET_STATUS'

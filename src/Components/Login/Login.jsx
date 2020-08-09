@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import l from './Login.module.css'
 import {reduxForm, Field, reset} from 'redux-form'
 

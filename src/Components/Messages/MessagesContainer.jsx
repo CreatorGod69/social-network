@@ -1,8 +1,8 @@
-import {addMessagesActionCreator} from "../../Redux/messages-reducer";
-import Messages from "./Messages";
-import {connect} from "react-redux";
-import withAuthRedirect from "../../HOC/withAuthRedirect";
-import {compose} from "redux";
+import { addMessagesActionCreator } from '../../redux/messages-reducer'
+import Messages from './Messages'
+import { connect } from 'react-redux'
+import withAuthRedirect from '../../hoc/withAuthRedirect'
+import { compose } from 'redux'
 
 let mapDispatchToProps = (dispatch) => {
     return {

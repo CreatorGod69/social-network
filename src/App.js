@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.css';
-import Header from './Components/Header/HeaderContainer';
-import Navbar from './Components/Navbar/Navbar';
-import Messages from './Components/Messages/MessagesContainer';
-import Profile from './Components/Profile/ProfileContainer';
+import Header from './components/Header/HeaderContainer';
+import Navbar from './components/Navbar/Navbar';
+import Messages from './components/Messages/MessagesContainer';
+import Profile from './components/Profile/ProfileContainer';
 import {BrowserRouter, Route} from "react-router-dom"
-import Friends from "./Components/Friends/FriendsContainer";
-import Login from "./Components/Login/Login";
+import Friends from "./components/Friends/FriendsContainer";
+import Login from "./components/Login/Login";
 
 
 const App = (props) => {

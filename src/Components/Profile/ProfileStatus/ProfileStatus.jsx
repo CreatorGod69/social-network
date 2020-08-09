@@ -1,5 +1,5 @@
-import React from 'react';
-import p from './ProfileStatus.module.css';
+import React from 'react'
+import p from './ProfileStatus.module.css'
 
 class ProfileStatus extends React.Component {
     state = {
@@ -8,7 +8,7 @@ class ProfileStatus extends React.Component {
     }
 
     activateEditMode = () => {
-        this.setState ({editMode: true});
+        this.setState ({editMode: true})
     }
 
     deactivateEditMode = () => {
@@ -42,4 +42,4 @@ class ProfileStatus extends React.Component {
     }
 }
 
-export default ProfileStatus;
+export default ProfileStatus
