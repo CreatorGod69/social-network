@@ -1,5 +1,6 @@
-const SEND_MESSAGE =  'SEND-MESSAGE';
-const UPDATE_NEW_MESSAGES_TEXT = 'UPDATE-NEW-MESSAGES-TEXT'
+const SEND_MESSAGE =  'SEND-MESSAGE'
+
+let id = (min, max) => Math.floor( Math.random() * max ) + min
 
 let initialState = {
     MessagesData: [
@@ -8,10 +9,9 @@ let initialState = {
         {id: 3, message: '???'},
         {
             id: 4,
-            message: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, natus. Quidem dolorem totam architecto eveniet unde mollitia, qui accusantium culpa?"
+            message: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, natus. Quidem dolorem totam architecto eveniet unde mollitia, qui accusantium culpa?'
         },
     ],
-    newMessageText: "",
     DialogsData: [
         {id: 1, name: 'Maria'},
         {id: 2, name: 'Katy'},
@@ -25,28 +25,15 @@ let initialState = {
 const messagesReducer = (state = initialState, action) => {
     switch (action.type) {
         case SEND_MESSAGE:
-            let body = state.newMessageText;
             return {
                 ...state,
-                newMessageText: "",
-                MessagesData: [...state.MessagesData, {id: 5, message: body}],
+                MessagesData: [...state.MessagesData, {id: id(1, 100), message: action.message}],
             }
-        case UPDATE_NEW_MESSAGES_TEXT:
-            return {
-                ...state,
-                newMessageText: action.body
-            };
         default:
-            return state;
+            return state
     }
 }
 
-export const addMessagesActionCreator = () => ({type: SEND_MESSAGE});
-export const updateNewMessagesTextCreator = (text) => {
-    return {
-        type: UPDATE_NEW_MESSAGES_TEXT,
-        body: text
-    }
-}
+export const addMessagesActionCreator = (message) => ({type: SEND_MESSAGE, message})
 
-export default messagesReducer;
+export default messagesReducer

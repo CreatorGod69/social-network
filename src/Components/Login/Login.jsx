@@ -12,13 +12,16 @@ const LoginForm = (props) => {
 }
 
 const afterSubmit = (result, dispatch) =>
-  dispatch(reset('login'))
+  dispatch(reset('login-form'))
 
-const LoginReduxForm = reduxForm({form: 'login', onSubmitSuccess: afterSubmit})(LoginForm)
+const LoginReduxForm = reduxForm({
+    form: 'login-form', 
+    onSubmitSuccess: afterSubmit
+})(LoginForm)
 
 const Login = (props) => {
     const onSubmit = (formData) => {
-        console.log(formData)
+        return
     }
 
     return <div>
@@ -27,4 +30,4 @@ const Login = (props) => {
     </div>
 }
 
-export default Login;
+export default Login

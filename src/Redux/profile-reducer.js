@@ -3,8 +3,9 @@ import userPhoto from "./../Assets/Images/user-man.png";
 
 const ADD_POST = 'ADD-POST'
 const SET_STATUS = 'SET_STATUS'
-const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT'
 const SET_USER_PROFILE = 'SET_USER_PROFILE'
+
+const id = (min, max) => Math.floor(Math.random() * max) + min
 
 let initialState = {
     PostsData: [
@@ -23,7 +24,6 @@ let initialState = {
             data: "01/03/2020"
         },
     ],
-    newPostText: "",
     profile: null,
     status: ""
 }
@@ -32,21 +32,15 @@ const profileReducer = (state = initialState, action) => {
     switch (action.type) {
         case ADD_POST:
             let newPost = {
-                id: 7731,
+                id: id(1,100),
                 name: action.namePost,
-                message: state.newPostText,
+                message: action.message,
                 data: action.dataPost,
                 img: userPhoto,
             };
             return {
                 ...state,
-                newPostText: "",
                 PostsData: [...state.PostsData, newPost]
-            }
-        case UPDATE_NEW_POST_TEXT:
-            return {
-                ...state,
-                newPostText: action.newText
             }
         case SET_STATUS: {
             return {
@@ -61,15 +55,14 @@ const profileReducer = (state = initialState, action) => {
     }
 }
 
-export const addPostActionCreator = (namePost, dataPost) => {
+export const addPostActionCreator = (namePost, message, dataPost) => {
     return {
         type: ADD_POST,
         namePost: namePost,
+        message: message,
         dataPost: dataPost
     }
 }
-
-export const updateNewPostTextActionCreator = (text) => ({type: UPDATE_NEW_POST_TEXT, newText: text});
 
 export const setUsersProfile = (profile) => ({type: SET_USER_PROFILE, profile})
 
@@ -91,7 +84,6 @@ export const updateUserStatus = (status) => (dispatch) => {
     profileAPI.updateStatus(status).then(response => {
         if(response.data.resultCode === 0) {
             dispatch(setStatus(status))
-            
         }
     })
 }

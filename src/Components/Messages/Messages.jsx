@@ -1,7 +1,31 @@
 import React from 'react';
-import DialogName from "./DialogName/DialogName";
-import messages from './Messages.module.css';
-import Dialog from "./Dialog/Dialog";
+import DialogName from './DialogName/DialogName'
+import messages from './Messages.module.css'
+import Dialog from './Dialog/Dialog'
+
+import { reduxForm, reset, Field } from 'redux-form'
+
+const DialogForm = (props) => {
+    return <form className={messages.form} onSubmit={props.handleSubmit}>
+            <Field
+            className={messages.textarea} 
+            rows={'3'}
+            placeholder={'Write a message'}
+            component={'textarea'}
+            name={'dialog'}
+            required></Field>
+        <button className={messages.btn}>POST</button>
+    </form>
+}
+
+const afterSubmit = (result, dispatch) => {
+    dispatch(reset('dialog-form'))
+}
+
+const DialogReduxForm = reduxForm({
+    form: 'dialog-form', 
+    onSubmitSuccess: afterSubmit
+})(DialogForm)
 
 const Messages = (props) => {
     let MessagesElements = props.MessagesData
@@ -10,16 +34,10 @@ const Messages = (props) => {
     let DialogElements = props.DialogsData
         .map(dialog => <DialogName name={dialog.name} key={dialog.id} id={dialog.id}/>);
 
-    let newMessageElement = React.createRef();
-
-    let addMessage = () => {
-        props.addMessages(newMessageElement.current.value);
+    const onSubmit = (value) => {
+        props.addMessages(value.dialog)
+        console.log(value.dialog)
     }
-
-    let onMessagesChange = () => {
-        props.updateNewMessagesText(newMessageElement.current.value);
-    }
-
 
     return <div className={messages.messages}>
         <div>{DialogElements}</div>
@@ -27,24 +45,13 @@ const Messages = (props) => {
             <div className={messages.inner}>
                 <div className={messages.content}>
                     {MessagesElements}
-
                 </div>
-                {/*<DialogInput store={props.store}/>*/}
-                <div className={messages.form} action="">
-                    <div>
-                        <textarea
-                            className={messages.textarea}
-                            ref={newMessageElement} rows="3"
-                            placeholder="Write a message"
-                            onChange={onMessagesChange}
-                            value={props.newMessages}
-                            required></textarea>
-                    </div>
-                    <button className={messages.btn} onClick={addMessage} href="">POST</button>
-                </div>
+                <DialogReduxForm onSubmit={onSubmit}/>
             </div>
         </div>
     </div>
 }
+
+
 
 export default Messages;

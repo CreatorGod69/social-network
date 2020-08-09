@@ -1,8 +1,9 @@
 import React from 'react'
 import input from './Input.module.css'
-import Post from "../Post/Post"
+import Post from '../Post/Post'
+import { reduxForm, Field, reset } from 'redux-form'
 
-const Input = (props) => {
+const InputForm = (props) => {
     let PostsElements = props.post.map (post => <Post
         key={post.id}
         img = {post.img}
@@ -10,35 +11,40 @@ const Input = (props) => {
         message = {post.message}
         data = {post.data}/>
     )
-    let newPostElement = React.createRef();
-
-    let addPost = ()  => {
-        props.addPost(newPostElement.current.value);
-    }
-
-    let onPostChange = () => {
-        let text = newPostElement.current.value;
-        props.updateNewPostText(text);
-    }
 
     return <div className={input.post}>
-            <div className={input.input}>
-                <div className={input.form} action="">
+                    <form onSubmit={props.handleSubmit}>
+                        <Field rows='3'
+                        placeholder='Write a message'
+                        required
+                        component={'textarea'}
+                        name={'profile'}></Field>
+                        <div>
+                            <button className={input.btn}>POST</button>
+                        </div>
+                    </form>
                     <div>
-                        <textarea rows="3" 
-                        ref={newPostElement} 
-                        placeholder="Write a message" 
-                        value={props.newPostText} 
-                        onChange={onPostChange}  
-                        required></textarea>
+                        { PostsElements }
                     </div>
-                    <button className={input.btn} onClick={addPost} href="">POST</button>
                 </div>
-            </div>
-        <div>
-        { PostsElements }
-        </div>
-    </div>
+
+}
+
+const afterSubmit = (result, dispatch) => {
+    dispatch(reset('profile-form'))
+}
+
+const InputReduxForm = reduxForm({
+    form: 'profile-form', 
+    onSubmitSuccess: afterSubmit
+})(InputForm)
+
+const Input = (props) => {
+    const onSubmit = (value) => {
+        props.addPost(value.post)
+    }
+
+    return <InputReduxForm post={props.post} updateNewPostText={props.updateNewPostText} onSubmit={onSubmit}/>
 }
 
 export default Input
