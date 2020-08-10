@@ -1,0 +1,18 @@
+.formControl {
+
+}
+
+/* .error textarea,
+.error input {
+    border: 2px solid red; 
+} */
+
+.error {
+    color: white;
+    background-color: red;
+
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+}

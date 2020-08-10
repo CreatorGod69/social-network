@@ -8,7 +8,6 @@ import {BrowserRouter, Route} from "react-router-dom"
 import Friends from "./components/Friends/FriendsContainer";
 import Login from "./components/Login/Login";
 
-
 const App = (props) => {
 
     return (

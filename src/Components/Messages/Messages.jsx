@@ -15,6 +15,8 @@ const DialogForm = (props) => {
             className={messages.textarea} 
             validate={[required, maxLenght30]}
             component={Textarea}
+            rows='3'
+            placeholder='Write a message'
             name={'dialog'}></Field>
         <button className={messages.btn}>POST</button>
     </form>
@@ -56,4 +58,4 @@ const Messages = (props) => {
 
 
 
-export default Messages;
+export default Messages

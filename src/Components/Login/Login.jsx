@@ -1,18 +1,42 @@
 import React from 'react'
 import l from './Login.module.css'
-import {reduxForm, Field, reset} from 'redux-form'
+import { reduxForm, Field, reset } from 'redux-form'
+import { Input } from './../common/FormsControls/FormsControls'
+import { required } from './../../utils/validators'
+
+import { connect } from 'react-redux'
+
+import { login } from './../../redux/auth-reducer'
 
 const LoginForm = (props) => {
     return <form onSubmit={props.handleSubmit} className={l.form}>
-            <Field className={l.login_input} name={'login'} component={'input'} placeholder='login'/>
-            <Field type='password' className={l.login_input} name={'password'} component={'input'} placeholder="password"/>
-            <h2 className={l.checkbox_title}><Field type={'checkbox'} className={l.checkbox} name={'checkbox'} component={'input'} /> remember me</h2>
+            <Field 
+                className={l.login_input} 
+                name={'login'} 
+                validate={required} 
+                component={Input} 
+                placeholder='login'
+            />
+
+            <Field 
+                type='password' 
+                className={l.login_input} 
+                name={'password'} 
+                component={Input}
+                validate={required} 
+                placeholder='password'
+            />
+
+            <h2 className={l.checkbox_title}>
+                <Field type={'checkbox'} className={l.checkbox} name={'checkbox'} component={'input'} /> 
+                remember me
+            </h2>
+
             <div><button className={l.login_button}>Login</button></div>
         </form>
 }
 
-const afterSubmit = (result, dispatch) =>
-  dispatch(reset('login-form'))
+const afterSubmit = (result, dispatch) => dispatch(reset('login-form'))
 
 const LoginReduxForm = reduxForm({
     form: 'login-form', 
@@ -20,8 +44,8 @@ const LoginReduxForm = reduxForm({
 })(LoginForm)
 
 const Login = (props) => {
-    const onSubmit = (formData) => {
-        return
+    const onSubmit = (value) => {
+        props.login(value.login, value.password, value.checkbox)
     }
 
     return <div>
@@ -30,4 +54,4 @@ const Login = (props) => {
     </div>
 }
 
-export default Login
+export default connect(null, {login})(Login)

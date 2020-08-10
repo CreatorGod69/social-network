@@ -21,6 +21,8 @@ const InputForm = (props) => {
                         <Field 
                         validate={[required, maxLenght10]}
                         component={Textarea}
+                        rows='3'
+                        placeholder='Write a message'
                         name={'profile'}></Field>
                         <div>
                             <button className={input.btn}>POST</button>
