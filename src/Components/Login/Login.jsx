@@ -7,6 +7,7 @@ import { required } from './../../utils/validators'
 import { connect } from 'react-redux'
 
 import { login } from './../../redux/auth-reducer'
+import { Redirect } from 'react-router-dom'
 
 const LoginForm = (props) => {
     return <form onSubmit={props.handleSubmit} className={l.form}>
@@ -48,10 +49,17 @@ const Login = (props) => {
         props.login(value.login, value.password, value.checkbox)
     }
 
+    if(props.isAuth) {
+        return <Redirect to={'/profile'}/>
+    }
+
     return <div>
         <h1 className={l.title}>Login In</h1>
         <LoginReduxForm onSubmit={onSubmit}/>
     </div>
 }
 
-export default connect(null, {login})(Login)
+const mapStateToProps = (state) => ({
+    isAuth: state.auth.isAuth
+})
+export default connect(mapStateToProps, {login})(Login)

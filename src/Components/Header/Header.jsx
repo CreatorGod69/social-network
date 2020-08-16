@@ -7,7 +7,7 @@ const Header = (props) => {
         <div className={header.header__inner}>
           <a href="http://localhost:3000/profile" className={header.logo}>12358</a>
             <NavLink to={'./login'}><div className={header.login_block}>{ props.isAuth
-                ? props.login
+                ? <div>{props.login}<button className={header.logout}>Log Out</button></div>
                 : "Login"}</div></NavLink>
         </div>
   </header>
