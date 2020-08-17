@@ -25,6 +25,10 @@
 }
 
 .header .logout {
+  background-color: #DCDCDC;
+  color: #000;
   margin: 0 20px;
+  background-image: linear-gradient(to left,transparent,transparent 50%,#fff 50%,#fff);
   width: 200px;
+  border-radius: 50px;
 }
