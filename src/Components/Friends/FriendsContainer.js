@@ -12,7 +12,7 @@ import {
     unFollowThunkCreator
 
 } from '../../redux/users-reducer'
-import withAuthRedirect from '../../hoc/withAuthRedirect'
+// import withAuthRedirect from '../../hoc/withAuthRedirect'
 import { compose } from 'redux'
 
 
@@ -61,5 +61,5 @@ export default compose(
         follow, unFollow, setCurrentPage, toggleFollowingInProgress,
         getUsersThunkCreator, followThunkCreator, unFollowThunkCreator
     }),
-    withAuthRedirect
+    // withAuthRedirect
 )(FriendsClassComponent)

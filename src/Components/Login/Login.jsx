@@ -1,7 +1,8 @@
 import React from 'react'
 import l from './Login.module.css'
-import { reduxForm, Field, reset } from 'redux-form'
+import { reduxForm, Field, /*reset*/ } from 'redux-form'
 import { Input } from './../common/FormsControls/FormsControls'
+import fc from './../common/FormsControls/FormsControls.module.css'
 import { required } from './../../utils/validators'
 
 import { connect } from 'react-redux'
@@ -33,15 +34,17 @@ const LoginForm = (props) => {
                 remember me
             </h2>
 
+            {props.error && <span className={fc.error}>{props.error}</span>}
+
             <div><button className={l.login_button}>Login</button></div>
         </form>
 }
 
-const afterSubmit = (result, dispatch) => dispatch(reset('login-form'))
+// const afterSubmit = (result, dispatch) => dispatch(reset('login-form'))
 
 const LoginReduxForm = reduxForm({
     form: 'login-form', 
-    onSubmitSuccess: afterSubmit
+    // onSubmitSuccess: afterSubmit
 })(LoginForm)
 
 const Login = (props) => {

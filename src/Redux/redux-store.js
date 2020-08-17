@@ -4,6 +4,7 @@ import profileReducer from './profile-reducer'
 import messagesReducer from './messages-reducer'
 import usersReducer from './users-reducer'
 import authReducer from './auth-reducer'
+import appReducer from './app-reducer'
 import thunk from 'redux-thunk'
 
 let reducers = combineReducers({
@@ -11,6 +12,7 @@ let reducers = combineReducers({
     messages: messagesReducer,
     users: usersReducer,
     auth: authReducer,
+    app: appReducer,
     form: formReducer 
 });
 
