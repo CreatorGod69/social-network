@@ -68,7 +68,7 @@ margin: 0 0 5px;
   grid-template-areas:
   "nav info info"
   "nav info info";
-  grid-template-columns: 4fr 8fr;
+  grid-template-columns: 2fr 10fr;
 
   width: 100%;
   max-width: 1000px;

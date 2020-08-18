@@ -1,5 +1,3 @@
-import { authAPI } from '../api/Api'
-import { stopSubmit } from 'redux-form'
 import { getAuthUserData } from './auth-reducer'
 
 let INITIALOZED_SUCCESS = 'INITIALOZED_SUCCESS'
