@@ -15,9 +15,9 @@ const Friends = (props) => {
     return <div>
         <div className={u.selector}>
             {pages.map(page => {
-                return <span onClick={(e) => {
+                return <span key={page} onClick={(e) => {
                     props.onPageChanged(page);
-                }} className={props.currentPage === page && u.selectPage}>{page}</span>
+                }} className={props.currentPage === page ? u.selectPage : null}>{page}</span>
             })}
         </div>
         {

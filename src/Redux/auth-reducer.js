@@ -40,9 +40,9 @@ export const getAuthUserData = () => (dispatch) => {
 
 export const login = (login, password, rememberMe) => (dispatch) => {
     authAPI
-        .login( login, password, rememberMe).then(response => {
+        .login(login, password, rememberMe).then(response => {
             if(response.data.resultCode === 0) {
-                let id = response.data.userId
+                let id = response.data.data.userId
                 dispatch(setAuthUserData(id, login, password, true))
             } else {
                 let message = response.data.messages.length > 0 ? response.data.messages[0] : 'invalid login or password'

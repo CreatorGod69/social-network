@@ -13,7 +13,7 @@ import {
 
 } from '../../redux/users-reducer'
 import { compose } from 'redux'
-import { getPageSize, getUsers, getFollowingInProgress,getIsFetching, getCurrentPage, getTotalUsersCount } from '../../redux/users-selectors'
+import { getPageSize, getFollowingInProgress,getIsFetching, getCurrentPage, getTotalUsersCount, getUsers } from '../../redux/users-selectors'
 
 
 class FriendsClassComponent extends React.Component {
@@ -27,7 +27,6 @@ class FriendsClassComponent extends React.Component {
     }
 
     render() {
-
         return <>
             {this.props.isFetching ? <Preloader/> : null}
             <Friends totalUsersCount={this.props.totalUsersCount}
@@ -45,17 +44,6 @@ class FriendsClassComponent extends React.Component {
     }
 }
 
-// let mapStateToProps = (state) => {
-//     return {
-//         usersData: state.users.usersData,
-//         pageSize: state.users.pageSize,
-//         totalUsersCount: state.users.totalUsersCount,
-//         currentPage: state.users.currentPage,
-//         isFetching: state.users.isFetching,
-//         followingInProgress: state.users.followingInProgress,
-//     }
-// }
-
 let mapStateToProps = (state) => ({
         usersData: getUsers(state),
         pageSize: getPageSize(state),
@@ -64,16 +52,6 @@ let mapStateToProps = (state) => ({
         isFetching: getIsFetching(state),
         followingInProgress: getFollowingInProgress(state),
 })
-
-// let mapDispatchToProps = (dispatch) => ({
-//     follow: () => dispatch(follow()),
-//     unFollow: () => dispatch(unFollow()),
-//     setCurrentPage: () => dispatch(setCurrentPage()),
-//     toggleFollowingInProgress: () => dispatch(toggleFollowingInProgress()),
-//     getUsersThunkCreator: () => dispatch(getUsersThunkCreator()),
-//     followThunkCreator: () => dispatch(followThunkCreator()),
-//     unFollowThunkCreator: () => dispatch(unFollowThunkCreator()),
-// })
 
 export default compose(
     connect(mapStateToProps, {

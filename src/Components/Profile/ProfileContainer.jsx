@@ -11,7 +11,7 @@ class ProfileContainer extends React.Component {
         if(!userId) {
             userId = this.props.authorizedUserId
             if (!userId) {
-                this.props.history.push('./users')
+                this.props.history.push('./login')
             }
         }
 
@@ -21,12 +21,13 @@ class ProfileContainer extends React.Component {
     }
 
     render() {
-        return ( <Profile {...this.props} profile={this.props.profile} updateStatus={this.props.updateUserStatus}/> )
+        return ( <Profile {...this.props} profile={this.props.profile} status={this.props.status} updateStatus={this.props.updateUserStatus}/> )
     }
 }
 
 let mapStateToProps = (state) => ({
     profile: state.profile,
+    status: state.profile.status,
     authorizedUserId: state.auth.userId,
     isAuth: state.auth.isAuth
 });

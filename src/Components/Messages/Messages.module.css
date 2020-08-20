@@ -1,5 +1,5 @@
 .messages {
-    margin: 20px;
+    /* margin: 20px; */
     margin-top: 0;
 
     display: grid;
@@ -22,7 +22,7 @@ a {
 
 .dialog {
     background-color: #fff;
-    height: 505px;
+    height: 600px;
 
     position: relative;
 }
@@ -38,7 +38,7 @@ a {
     display: flex;
     flex-direction: column;
 
-    height: 330px;
+    height: 420px;
     overflow: auto;
 }
 

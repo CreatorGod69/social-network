@@ -6,7 +6,7 @@ import ProfileData from './ProfileData/ProfileData'
 const Profile = (props) => {
   return <div className={profile.info}>
       <div className={profile.info__inner}>
-        <ProfileData profile={props.profile} updateStatus={props.updateStatus}/>
+        <ProfileData profile={props.profile} status={props.status} updateStatus={props.updateStatus}/>
         <Input/>
       </div>
   </div>

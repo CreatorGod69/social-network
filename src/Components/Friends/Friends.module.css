@@ -6,7 +6,7 @@
     overflow: hidden;
 
     background-color: #ffffff;
-    margin-left: 20px;
+    /* margin-left: 20px; */
 
     display: flex;
     justify-content: center;
@@ -75,7 +75,7 @@
 }
 
 .selector {
-    margin-left: 20px;
+    /* margin-left: 20px; */
     background-color: #222;
     display: flex;
     justify-content: center;

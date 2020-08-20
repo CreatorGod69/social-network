@@ -2,7 +2,8 @@ import React from 'react'
 import profile from './ProfileData.module.css'
 import Preloader from './../../common/Preloader/Preloader'
 import userPhoto from '../../../assets/images/user-man.png'
-import ProfileStatus from '../ProfileStatus/ProfileStatus'
+// import ProfileStatus from '../ProfileStatus/ProfileStatus'
+import ProfileStatusWithHooks from './../ProfileStatus/ProfileStatusWithHooks'
 
 const ProfileData = (props) => {
     const welcome = 'Hello! I am a new user of this social network.'
@@ -21,7 +22,7 @@ const ProfileData = (props) => {
                 <p>Web Site: {props.profile.profile.contacts.website != null ? props.profile.profile.contacts.website : '-------'}</p>
             </div>
         </div>
-            <ProfileStatus profile={props.profile} updateStatus={props.updateStatus} welcome={welcome}/>
+            <ProfileStatusWithHooks profile={props.profile} status={props.status} updateStatus={props.updateStatus} welcome={welcome}/>
         </>
 }
 
