@@ -1,6 +1,6 @@
 import React from 'react'
 import l from './Login.module.css'
-import { reduxForm, Field, /*reset*/ } from 'redux-form'
+import { reduxForm, Field } from 'redux-form'
 import { Input } from './../common/FormsControls/FormsControls'
 import fc from './../common/FormsControls/FormsControls.module.css'
 import { required } from './../../utils/validators'
@@ -10,8 +10,8 @@ import { connect } from 'react-redux'
 import { login } from './../../redux/auth-reducer'
 import { Redirect } from 'react-router-dom'
 
-const LoginForm = (props) => {
-    return <form onSubmit={props.handleSubmit} className={l.form}>
+const LoginForm = ({handleSubmit, error}) => {
+    return <form onSubmit={handleSubmit} className={l.form}>
             <Field 
                 className={l.login_input} 
                 name={'login'} 
@@ -19,7 +19,6 @@ const LoginForm = (props) => {
                 component={Input} 
                 placeholder='login'
             />
-
             <Field 
                 type='password' 
                 className={l.login_input} 
@@ -28,31 +27,27 @@ const LoginForm = (props) => {
                 validate={required} 
                 placeholder='password'
             />
-
             <h2 className={l.checkbox_title}>
                 <Field type={'checkbox'} className={l.checkbox} name={'checkbox'} component={'input'} /> 
                 remember me
             </h2>
 
-            {props.error && <span className={fc.error}>{props.error}</span>}
+            {error && <span className={fc.error}>{error}</span>}
 
             <div><button className={l.login_button}>Login</button></div>
         </form>
 }
 
-// const afterSubmit = (result, dispatch) => dispatch(reset('login-form'))
-
 const LoginReduxForm = reduxForm({
-    form: 'login-form', 
-    // onSubmitSuccess: afterSubmit
+    form: 'login-form'
 })(LoginForm)
 
-const Login = (props) => {
+const Login = ({isAuth, login}) => {
     const onSubmit = (value) => {
-        props.login(value.login, value.password, value.checkbox)
+        login(value.login, value.password, value.checkbox)
     }
 
-    if(props.isAuth) {
+    if(isAuth) {
         return <Redirect to={'/profile'}/>
     }
 

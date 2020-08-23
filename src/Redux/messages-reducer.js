@@ -13,12 +13,12 @@ let initialState = {
         },
     ],
     DialogsData: [
-        {id: 1, name: 'Maria'},
-        {id: 2, name: 'Katy'},
-        {id: 3, name: 'Gector'},
-        {id: 4, name: 'Vasya'},
-        {id: 5, name: 'Andre'},
-        {id: 6, name: 'Rick'},
+        {id: 1, name: 'Maria Berestovaya'},
+        {id: 2, name: 'Katy Berestovaya'},
+        {id: 3, name: 'Gector Bredbery'},
+        {id: 4, name: 'Vasya Ivanov'},
+        {id: 5, name: 'Andre Manyel'},
+        {id: 6, name: 'Rick and Mortyt'},
     ],
 }
 

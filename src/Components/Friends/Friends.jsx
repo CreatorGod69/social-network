@@ -2,24 +2,13 @@ import React from 'react'
 import u from './Friends.module.css'
 import userPhoto from '../../assets/images/user-man.png'
 import { NavLink } from 'react-router-dom'
+import Paginator from '../common/Paginator/Paginator'
 
 
-const Friends = (props) => {
-    // let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
-
-    let pages = [];
-
-    for (let i = 1; i < /*pagesCount*/6; i++) {
-        pages.push(i);
-    }
+const Friends = ({currentPage, onPageChanged, totalUsersCount, pageSize, ...props}) => {
+    
     return <div>
-        <div className={u.selector}>
-            {pages.map(page => {
-                return <span key={page} onClick={(e) => {
-                    props.onPageChanged(page);
-                }} className={props.currentPage === page ? u.selectPage : null}>{page}</span>
-            })}
-        </div>
+        <Paginator currentPage={currentPage} onPageChanged={onPageChanged} totalUsersCount={totalUsersCount} pageSize={pageSize}/>
         {
             props.usersData.map(usersData => <div key={usersData.id}>
                 <div className={u.info}>

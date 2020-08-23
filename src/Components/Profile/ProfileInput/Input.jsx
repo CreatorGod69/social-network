@@ -5,7 +5,7 @@ import { reduxForm, Field, reset } from 'redux-form'
 import { required, maxLenghtCreator } from './../../../utils/validators'
 import { Textarea } from './../../common/FormsControls/FormsControls'
 
-let maxLenght10 = maxLenghtCreator(10)
+let maxLenght50 = maxLenghtCreator(50)
 
 const InputForm = (props) => {
     let PostsElements = props.post.map (post => <Post
@@ -19,7 +19,7 @@ const InputForm = (props) => {
     return <div className={input.post}>
                     <form onSubmit={props.handleSubmit}>
                         <Field 
-                        validate={[required, maxLenght10]}
+                        validate={[required, maxLenght50]}
                         component={Textarea}
                         rows='3'
                         placeholder='Write a message'

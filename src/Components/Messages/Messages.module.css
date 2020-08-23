@@ -1,9 +1,6 @@
 .messages {
-    /* margin: 20px; */
-    margin-top: 0;
-
     display: grid;
-    grid-template-columns: 2fr 10fr;
+    grid-template-columns: 4fr 8fr;
 }
 
 a {
