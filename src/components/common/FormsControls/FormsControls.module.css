@@ -1,13 +1,13 @@
 .errorForm {
-    border: 2px solid red; 
+  border: 2px solid red;
 }
 
 .error {
-    color: white;
-    background-color: red;
+  color: white;
+  background-color: red;
 
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    z-index: 1;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
 }

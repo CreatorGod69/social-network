@@ -2,27 +2,27 @@
 
 /* Полоса прокрутки */
 ::-webkit-scrollbar {
-	width: 10px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-background: #f1f1f1; 
+  background: #f1f1f1;
 }
 
 ::-webkit-scrollbar-thumb {
-background: #888; 
+  background: #888;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-background: #555; 
+  background: #555;
 }
 
 body {
   margin: 0;
   color: #222;
-  background: #DCDCDC;
+  background: #dcdcdc;
   -webkit-font-smoothing: antialiased;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 1rem;
 }
 
@@ -35,17 +35,17 @@ button:focus {
 *,
 *:before,
 *:after {
-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 ::selection {
- background-color: #000;
- color: #fff;
+  background-color: #000;
+  color: #fff;
 }
 
 ::-moz-selection {
- background-color: #000;
- color: #fff;
+  background-color: #000;
+  color: #fff;
 }
 
 h1,
@@ -55,19 +55,19 @@ h4,
 h5,
 h5,
 h6 {
-margin: 0;
+  margin: 0;
 }
 
 p {
-margin: 0 0 5px;
+  margin: 0 0 5px;
 }
 
 .app-inner {
   display: grid;
- 
+
   grid-template-areas:
-  "nav info info"
-  "nav info info";
+    "nav info info"
+    "nav info info";
   grid-template-columns: 2fr 10fr;
 
   width: 100%;
@@ -76,47 +76,54 @@ margin: 0 0 5px;
   padding-right: 1rem;
   margin: 0 auto;
 }
- button{
-    text-decoration: none;
-    outline: none;
-    display: inline-block;
-    padding: 25px 0;
+button {
+  text-decoration: none;
+  outline: none;
+  display: inline-block;
+  padding: 25px 0;
 
-    width: 500px;
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    position: relative;
-    overflow: hidden;
+  width: 500px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  position: relative;
+  overflow: hidden;
 
-    background-color: #222222;
+  background-color: #222222;
 
-    background-image: linear-gradient(to left,transparent,transparent 50%,#DCDCDC 50%,#DCDCDC);
-    background-position: 100% 0;
-    background-size: 200% 100%;
-    transition: all .25s ease-in;
-    border: none;
+  background-image: linear-gradient(
+    to left,
+    transparent,
+    transparent 50%,
+    #dcdcdc 50%,
+    #dcdcdc
+  );
+  background-position: 100% 0;
+  background-size: 200% 100%;
+  transition: all 0.25s ease-in;
+  border: none;
 
-    color: #fff;
-    font-weight: 700;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1rem;
+  color: #fff;
+  font-weight: 700;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
 }
 
 button:hover {
-    color: #222;
-    background-position: 0 0;
+  color: #222;
+  background-position: 0 0;
 }
 
-textarea, input {
-    font-size: 1.5rem;
-    width: 500px;
-    padding: 5px 10px;
-    outline: 0;
-    font-family: 'Montserrat', sans-serif;
-    cursor: pointer;
-    border-width: 0;
-    resize: none;
-    color: #222;
-    background-color: #DCDCDC;
+textarea,
+input {
+  font-size: 1.5rem;
+  width: 500px;
+  padding: 5px 10px;
+  outline: 0;
+  font-family: "Montserrat", sans-serif;
+  cursor: pointer;
+  border-width: 0;
+  resize: none;
+  color: #222;
+  background-color: #dcdcdc;
 }

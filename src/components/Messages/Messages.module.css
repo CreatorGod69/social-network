@@ -1,48 +1,48 @@
 .messages {
-    display: grid;
-    grid-template-columns: 4fr 8fr;
+  display: grid;
+  grid-template-columns: 4fr 8fr;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .textarea {
-    width: 100%;
-    background-color: #222222;
-    color: #fff;
+  width: 100%;
+  background-color: #222222;
+  color: #fff;
 }
 
 .form {
-    border: 2px solid #fff;
+  border: 2px solid #fff;
 }
 
 .dialog {
-    background-color: #fff;
-    height: 600px;
+  background-color: #fff;
+  height: 600px;
 
-    position: relative;
+  position: relative;
 }
 
 .inner {
-    width: 100%;
-    position: absolute;
-    right: 0;
-    bottom: 0;
+  width: 100%;
+  position: absolute;
+  right: 0;
+  bottom: 0;
 }
 
 .content {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
-    height: 420px;
-    overflow: auto;
+  height: 420px;
+  overflow: auto;
 }
 
 .textarea {
-    width: 100%;
+  width: 100%;
 }
 
 .btn {
-    width: 100%;
+  width: 100%;
 }

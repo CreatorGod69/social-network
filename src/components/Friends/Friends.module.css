@@ -1,104 +1,104 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway&display=swap");
 
-
 .info {
-    grid-area: info;
-    overflow: hidden;
+  grid-area: info;
+  overflow: hidden;
 
-    background-color: #ffffff;
-    /* margin-left: 20px; */
+  background-color: #ffffff;
+  /* margin-left: 20px; */
 
-    display: flex;
-    justify-content: center;
-
+  display: flex;
+  justify-content: center;
 }
 
 .inner {
-    margin: 20px;
-    width: 600px;
-    display: flex;
-    justify-content: center;
+  margin: 20px;
+  width: 600px;
+  display: flex;
+  justify-content: center;
 }
 
 .review {
-    color: #222222;
-    font-size: 1.5rem;
-    font-weight: 500;
+  color: #222222;
+  font-size: 1.5rem;
+  font-weight: 500;
 
-    display: flex;
+  display: flex;
 }
 
 .review img {
-    object-fit: cover;
-    width: 80px;
-    height: 80px;
-    /* border-radius: 50%; */
-    background: #222222;
-
+  object-fit: cover;
+  width: 80px;
+  height: 80px;
+  /* border-radius: 50%; */
+  background: #222222;
 }
 
 .text {
-    margin-left: 20px;
-    width: 300px;
+  margin-left: 20px;
+  width: 300px;
 }
 
 .text h1 {
-    font-size: 1rem;
+  font-size: 1rem;
 }
 
 .text p {
-    max-width: 280px;
-    margin: 0;
-    font-size: 1rem;
+  max-width: 280px;
+  margin: 0;
+  font-size: 1rem;
 }
 
 .btn {
-    width: 150px;
-    font-size: 0.8rem;
+  width: 150px;
+  font-size: 0.8rem;
 }
 
 .btn:disabled,
 .btnActive:disabled {
-    opacity: .5;
+  opacity: 0.5;
 }
 
 .btnActive {
-    background-color: #DCDCDC;
-    background-image: linear-gradient(to left,transparent,transparent 50%,#222 50%,#222);
-    width: 150px;
-    color: #222222;
-    font-size: 0.8rem;
+  background-color: #dcdcdc;
+  background-image: linear-gradient(
+    to left,
+    transparent,
+    transparent 50%,
+    #222 50%,
+    #222
+  );
+  width: 150px;
+  color: #222222;
+  font-size: 0.8rem;
 }
 
 .btnActive:hover {
-    color: #fff;
+  color: #fff;
 }
 
 .selector {
-    /* margin-left: 20px; */
-    background-color: #222;
-    display: flex;
-    justify-content: center;
+  /* margin-left: 20px; */
+  background-color: #222;
+  display: flex;
+  justify-content: center;
 }
 
 span {
-    margin-left: 20px;
-    font-weight: bold;
-    color: #fff;
-    padding: 20px;
-    cursor: pointer;
+  margin-left: 20px;
+  font-weight: bold;
+  color: #fff;
+  padding: 20px;
+  cursor: pointer;
 
-    transition: font-size .2s linear;
+  transition: font-size 0.2s linear;
 }
 
-
-.selectPage, span:hover {
-    font-size: 2rem;
+.selectPage,
+span:hover {
+  font-size: 2rem;
 }
-
-
 
 span:first-child {
-    margin: 0;
+  margin: 0;
 }
-

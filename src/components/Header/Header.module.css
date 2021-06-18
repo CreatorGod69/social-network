@@ -24,11 +24,17 @@
 }
 
 .header .logout {
-  background-color: #DCDCDC;
+  background-color: #dcdcdc;
   color: #000;
   border-radius: 50px;
   padding: 10px 20px;
-  background-image: linear-gradient(to left,transparent,transparent 50%,#fff 50%,#fff);
+  background-image: linear-gradient(
+    to left,
+    transparent,
+    transparent 50%,
+    #fff 50%,
+    #fff
+  );
   width: 150px;
   margin-right: 20px;
 }

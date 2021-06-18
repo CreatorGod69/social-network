@@ -1,16 +1,16 @@
 .text {
-    border-radius: 30px;
-    padding: 20px;
-    margin: 10px;
-    color: #fff;
+  border-radius: 30px;
+  padding: 20px;
+  margin: 10px;
+  color: #fff;
 }
 
 .me {
-    background-color: #222;
-    float: right;
+  background-color: #222;
+  float: right;
 }
 
 .other {
-    background-color: #222;
-    float: left;
+  background-color: #222;
+  float: left;
 }

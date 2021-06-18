@@ -1,26 +1,31 @@
 .dialog {
-    background-color: #222222;
-    padding: 20px;
-    position: relative;
-    border-bottom: 1px solid #fff;
-    cursor: pointer;
+  background-color: #222222;
+  padding: 20px;
+  position: relative;
+  border-bottom: 1px solid #fff;
+  cursor: pointer;
 
-    /* width: 180px; */
+  /* width: 180px; */
 
-    color: #fff;
+  color: #fff;
 
-    background-image: linear-gradient(to left,transparent,transparent 50%,#fff 50%,#fff);
-    background-position: 100% 0;
-    background-size: 200% 100%;
-    transition: all .25s ease-in;
+  background-image: linear-gradient(
+    to left,
+    transparent,
+    transparent 50%,
+    #fff 50%,
+    #fff
+  );
+  background-position: 100% 0;
+  background-size: 200% 100%;
+  transition: all 0.25s ease-in;
 }
 
 .dialog:hover {
-    color: #222;
-    background-position: 0 0;
+  color: #222;
+  background-position: 0 0;
 }
 
 .dialog h1 {
-    font-size: 1rem;
+  font-size: 1rem;
 }
-

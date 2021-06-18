@@ -1,39 +1,44 @@
 .login_input {
-    background-color: #ffffff;
-    margin-bottom: 20px;
-    padding: 20px;
-    width: 500px;
+  background-color: #ffffff;
+  margin-bottom: 20px;
+  padding: 20px;
+  width: 500px;
 
-    font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 
 .form {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .login_button {
-    background-color: #222222;
-    background-image: linear-gradient(to left,transparent,transparent 50%,#fff 50%,#fff);
-
+  background-color: #222222;
+  background-image: linear-gradient(
+    to left,
+    transparent,
+    transparent 50%,
+    #fff 50%,
+    #fff
+  );
 }
 
 .checkbox {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 
-    content: "";
-    width: 20px;
-    height: 20px;
-    border: 1px solid #dddddd;
-    background-color: #ffffff;
+  content: "";
+  width: 20px;
+  height: 20px;
+  border: 1px solid #dddddd;
+  background-color: #ffffff;
 }
 
 .title {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 
-    font-size: 3rem;
+  font-size: 3rem;
 }
 
 .checkbox_title {
-    font-weight: 500;
+  font-weight: 500;
 }
