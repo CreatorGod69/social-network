@@ -1,9 +1,9 @@
 import React from 'react'
 import profile from './ProfileData.module.css'
-import Preloader from './../../common/Preloader/Preloader'
+import Preloader from '../../common/Preloader/Preloader'
 import userPhoto from '../../../assets/images/user-man.png'
 // import ProfileStatus from '../ProfileStatus/ProfileStatus'
-import ProfileStatusWithHooks from './../ProfileStatus/ProfileStatusWithHooks'
+import ProfileStatusWithHooks from '../ProfileStatus/ProfileStatusWithHooks'
 
 const ProfileData = (props) => {
     const welcome = 'Hello! I am a new user of this social network.'

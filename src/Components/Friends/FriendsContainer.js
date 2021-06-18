@@ -1,7 +1,7 @@
 import  { connect } from 'react-redux'
 import Friends from './Friends'
 import React from 'react'
-import Preloader from './../common/Preloader/Preloader'
+import Preloader from '../common/Preloader/Preloader'
 import {
     follow,
     getUsersThunkCreator,

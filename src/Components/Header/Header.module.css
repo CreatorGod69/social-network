@@ -1,13 +1,12 @@
 .header {
   margin-bottom: 20px;
   background-color: #222;
-  height: 100px;
-  line-height: 100px;
-}
+  height: 80px;
+  width: 100%;
 
-.header__inner {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .header .logo {
@@ -27,8 +26,9 @@
 .header .logout {
   background-color: #DCDCDC;
   color: #000;
-  margin: 0 20px;
-  background-image: linear-gradient(to left,transparent,transparent 50%,#fff 50%,#fff);
-  width: 200px;
   border-radius: 50px;
+  padding: 10px 20px;
+  background-image: linear-gradient(to left,transparent,transparent 50%,#fff 50%,#fff);
+  width: 150px;
+  margin-right: 20px;
 }
