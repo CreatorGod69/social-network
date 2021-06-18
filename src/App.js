@@ -4,7 +4,7 @@ import Header from './components/Header/HeaderContainer';
 import Navbar from './components/Navbar/Navbar';
 import Messages from './components/Messages/MessagesContainer';
 import Profile from './components/Profile/ProfileContainer';
-import {Route, withRouter} from "react-router-dom"
+import {Redirect, Route, withRouter} from "react-router-dom"
 import Friends from "./components/Friends/FriendsContainer";
 import Login from "./components/Login/Login";
 import { initializeApp } from './redux/app-reducer'
@@ -21,7 +21,8 @@ class App extends Component {
         if(!this.props.initialized) {
             return <Preloader/>
         }
-
+//123456
+//rainbowdeity69@gmail.com
         return (
                 <div className="app-wrapper">
                     <Header/>
@@ -31,6 +32,10 @@ class App extends Component {
                         
                             <Route path="/messages"
                             component={Messages}/>
+
+                            <Route path="/">
+                                <Redirect to="/profile" />
+                            </Route>
 
                             <Route path="/profile/:userId?"
                             component={Profile}/>

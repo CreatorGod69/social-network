@@ -2,8 +2,8 @@ import React from 'react'
 import DialogName from './DialogName/DialogName'
 import messages from './Messages.module.css'
 import Dialog from './Dialog/Dialog'
-import { Textarea } from './../common/FormsControls/FormsControls'
-import { required, maxLenghtCreator } from './../../utils/validators'
+import { Textarea } from '../common/FormsControls/FormsControls'
+import { required, maxLenghtCreator } from '../../utils/validators'
 
 import { reduxForm, reset, Field } from 'redux-form'
 
